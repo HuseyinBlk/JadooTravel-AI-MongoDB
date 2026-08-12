@@ -163,4 +163,8 @@
       <_ContentIncludedByDefault Remove="wwwroot\jadoo\vendors.json" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages\Shared\Components\" />
+    </ItemGroup>
+
 </Project>
