@@ -1,0 +1,28 @@
+@model CreateDestinationDto
+
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+
+<div class="container">
+    <br/><br/>
+    <form method="post">
+        <input type="text" class="form-control" asp-for="Country" placeholder="Ülke Adı Giriniz" />
+        <br/>
+        <input type="text" class="form-control" asp-for="City" placeholder="Şehir Adı Giriniz" />
+        <br/>
+        <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Fotoğraf Dosya Yolu Giriniz" />
+        <br/>
+        <input type="text" class="form-control" asp-for="Price" placeholder="Ücret Giriniz" />
+        <br/>
+        <input type="text" class="form-control" asp-for="DayNight" placeholder="Süre Giriniz" />
+        <br/>
+        <input type="number" class="form-control" asp-for="Capacity" placeholder="Kapasite Giriniz" />
+        <br/>
+        <textarea type="text" class="form-control" asp-for="Description" placeholder="Açıklama Giriniz" rows="3"></textarea>
+        <br/>
+        <button type="submit" class="btn btn-primary">Turu Ekle</button>
+    </form>
+</div>
