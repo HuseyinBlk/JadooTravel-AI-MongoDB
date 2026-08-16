@@ -8,5 +8,5 @@ public interface ITripPlanService
     Task CreateTripPlanAsync(CreateTripPlanDto tripPlanDto);
     Task UpdateTripPlanAsync(UpdateTripPlanDto tripPlanDto);
     Task DeleteTripPlanAsync(string id);
-    Task GetTripPlanByIdAsync(string id);
+    Task<GetTripPlanByIdDto> GetTripPlanByIdAsync(string id);
 }

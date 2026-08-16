@@ -1,0 +1,131 @@
+@model JadooTravel.Dtos.TestimonialDtos.GetTestimonialByIdDto
+
+@{
+  ViewData["Title"] = "Yorumu Güncelle";
+  Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+  
+  <div class="col-lg-7 mb-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Yorum Değerlendirmesini Güncelle</h4>
+
+        <form action="/Admin/Testimonial/Update/@Model.TestimonialId" method="post">
+
+          
+          <input type="hidden" name="TestimonialId" value="@Model.TestimonialId"/>
+
+          
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark" for="NameSurname">Müşteri Adı Soyadı</label>
+            <input type="text" class="form-control" id="NameSurname" name="NameSurname"
+                   value="@Model.NameSurname" required/>
+          </div>
+
+          
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark" for="Title">Ünvan / Lokasyon</label>
+            <input type="text" class="form-control" id="Title" name="Title"
+                   value="@Model.Title" required/>
+          </div>
+
+          
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark" for="PhotoUrl">Profil Fotoğrafı URL</label>
+            <input type="text" class="form-control" id="PhotoUrl" name="PhotoUrl"
+                   value="@Model.PhotoUrl" required/>
+          </div>
+
+          
+          <div class="mb-4">
+            <label class="form-label fw-semibold text-dark" for="Description">Müşteri Yorumu</label>
+            <textarea class="form-control" id="Description" name="Description" rows="5" required>@Model.Description</textarea>
+          </div>
+
+          
+          <div class="d-flex align-items-center gap-3">
+            <button type="submit" class="btn btn-warning text-white px-4 py-2">Güncelle</button>
+            <a href="/Admin/Testimonial" class="btn btn-light px-4 py-2">İptal</a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-lg-5">
+    <div class="card shadow-sm border-0 bg-light-warning text-warning mb-4">
+      <div class="card-body text-center py-3">
+        <h6 class="mb-0 fw-semibold fs-3 text-warning">
+          <i class="ti ti-eye me-1 fs-5"></i> Canlı Önizleme Paneli
+        </h6>
+      </div>
+    </div>
+
+    
+    
+    <div class="position-relative" style="margin-top: 40px; margin-right: 45px;">
+
+      
+      <div class="card shadow position-relative bg-white" style="border-radius:10px; z-index: 2;">
+        
+        <div class="position-absolute start-0 top-0 translate-middle" style="z-index: 3;">
+          <img id="previewPhoto" class="rounded-circle border border-2 border-white shadow"
+               src="@(string.IsNullOrEmpty(Model.PhotoUrl) ? "/Spike-Admin/src/assets/images/profile/user-1.jpg" : Model.PhotoUrl)"
+               height="65" width="65" alt="author" style="object-fit: cover;"/>
+        </div>
+
+        
+        <div class="card-body p-4 pt-5">
+          <p class="fw-medium text-muted mb-4 fs-3" id="previewDesc">
+            &quot;@Model.Description&quot;
+          </p>
+          <h5 class="text-secondary fw-bold" id="previewName">@Model.NameSurname</h5>
+          <p class="fw-semibold text-dark fs-2 mb-0" id="previewTitle">@Model.Title</p>
+        </div>
+      </div>
+
+      
+      <div class="card shadow-sm position-absolute top-0 start-0 w-100 h-100"
+           style="border-radius:10px; transform: translate(25px, 25px); z-index: 1; background-color: #f8f9fa; border: 1px solid #e9ecef; pointer-events: none;">
+      </div>
+
+    </div>
+    
+  </div>
+</div>
+
+@section Scripts {
+  <script>
+    const nameInput = document.getElementById('NameSurname');
+    const titleInput = document.getElementById('Title');
+    const photoInput = document.getElementById('PhotoUrl');
+    const descInput = document.getElementById('Description');
+
+    const previewName = document.getElementById('previewName');
+    const previewTitle = document.getElementById('previewTitle');
+    const previewPhoto = document.getElementById('previewPhoto');
+    const previewDesc = document.getElementById('previewDesc');
+
+    const defaultPhoto = '/Spike-Admin/src/assets/images/profile/user-1.jpg';
+
+    nameInput.addEventListener('input', (e) => {
+      previewName.innerText = e.target.value.trim() !== "" ? e.target.value : "Müşteri Adı";
+    });
+
+    titleInput.addEventListener('input', (e) => {
+      previewTitle.innerText = e.target.value.trim() !== "" ? e.target.value : "Ünvan / Lokasyon";
+    });
+
+    photoInput.addEventListener('input', (e) => {
+      previewPhoto.src = e.target.value.trim() !== "" ? e.target.value : defaultPhoto;
+    });
+
+    descInput.addEventListener('input', (e) => {
+      previewDesc.innerHTML = e.target.value.trim() !== "" ? `&quot;${e.target.value}&quot;` : `&quot;Yorum alanı boş bırakılamaz...&quot;`;
+    });
+  </script>
+}

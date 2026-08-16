@@ -1,0 +1,99 @@
+    <aside class="left-sidebar">
+      
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="/dashboard" class="text-nowrap logo-img">
+            <img src="~/Spike-Admin/src/assets/images/logos/logo.svg" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+              <span class="hide-menu">Home</span>
+            </li>
+
+            
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Dashboard" asp-action="Index" aria-expanded="false">
+                <iconify-icon icon="solar:atom-line-duotone"></iconify-icon>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Feature" asp-action="Feature" aria-expanded="false">
+                <iconify-icon icon="solar:screencast-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Banner Ayarları</span>
+              </a>
+            </li>
+
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Category" asp-action="CategoryList" aria-expanded="false">
+                <iconify-icon icon="solar:layers-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Kategoriler</span>
+              </a>
+            </li>
+
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Destination" asp-action="DestinationList" aria-expanded="false">
+                <iconify-icon icon="solar:map-point-wave-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Tur Rotaları</span>
+              </a>
+            </li>
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="AiRecommend" asp-action="Index" aria-expanded="false">
+                <iconify-icon icon="solar:magic-stick-bold-duotone"></iconify-icon>
+                <span class="hide-menu fw-bold text-primary">AI Gezi Rehberi</span>
+              </a>
+            </li>
+            
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="TripPlan" asp-action="TripPlanList" aria-expanded="false">
+                <iconify-icon icon="solar:route-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Seyahat Adımları</span>
+              </a>
+            </li>
+
+            
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Booking" asp-action="Index" aria-expanded="false">
+                <iconify-icon icon="solar:ticket-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Rezervasyonlar</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Testimonial" asp-action="TestimonialList" aria-expanded="false">
+                <iconify-icon icon="solar:chat-square-like-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Müşteri Yorumları</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Partner" asp-action="PartnerList" aria-expanded="false">
+                <iconify-icon icon="solar:globus-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Sponsor Markalar</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link primary-hover-bg" asp-controller="Subscribe" asp-action="SubscribeList" aria-expanded="false">
+                <iconify-icon icon="solar:letter-bold-duotone"></iconify-icon>
+                <span class="hide-menu">Bülten Aboneleri</span>
+              </a>
+            </li>
+          </ul>
+          
+        </nav>
+        
+      </div>
+      
+    </aside>

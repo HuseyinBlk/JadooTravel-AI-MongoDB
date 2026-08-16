@@ -1,0 +1,373 @@
+@model dynamic
+
+@{
+    Layout = "/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+    
+    <div class="col-lg-8 d-flex align-items-strech">
+      <div class="card w-100">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div>
+              <h5 class="card-title fw-semibold">Haftalık Rezervasyon & Misafir Analizi</h5>
+              <p class="text-muted mb-0 fs-3">Gün bazlı yeni kayıtlar ve toplam katılımcı sayıları</p>
+            </div>
+          </div>
+          <div id="profit"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-4">
+      <div class="row">
+        
+        <div class="col-lg-12 col-sm-6">
+          <div class="card overflow-hidden">
+            <div class="card-body p-4">
+              <h5 class="card-title mb-10 fw-semibold">Rota Dağılımları</h5>
+              <div class="row align-items-center">
+                <div class="col-7">
+                  <h4 class="fw-semibold mb-3">@ViewBag.TotalBookingsCount Adet</h4>
+                  <div class="d-flex align-items-center mb-2">
+                    <span class="me-1 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                      <i class="ti ti-arrow-up-left text-success"></i>
+                    </span>
+                    <p class="text-dark me-1 fs-3 mb-0">Aktif Rezervasyon Talebi</p>
+                  </div>
+                </div>
+                <div class="col-5">
+                  <div class="d-flex justify-content-center">
+                    <div id="grade"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col-lg-12 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="row align-items-start">
+                <div class="col-8">
+                  <h5 class="card-title mb-10 fw-semibold">Toplam Ciro</h5>
+                  <h4 class="fw-semibold mb-3">@ViewBag.TotalRevenue</h4>
+                  <div class="d-flex align-items-center pb-1">
+                    <span class="me-2 rounded-circle bg-light-success round-20 d-flex align-items-center justify-content-center">
+                      <i class="ti ti-arrow-up-left text-success"></i>
+                    </span>
+                    <p class="text-dark me-1 fs-3 mb-0">Kazanılan</p>
+                    <p class="fs-3 mb-0">Toplam Tutar</p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="d-flex justify-content-end">
+                    <div class="text-white bg-danger rounded-circle p-6 d-flex align-items-center justify-content-center" style="background-color: var(--bs-primary) !important;">
+                      <i class="ti ti-currency-dollar fs-6"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="earning"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 d-flex align-items-stretch">
+      <div class="card w-100">
+        <div class="card-body p-4">
+          <div class="d-flex mb-4 justify-content-between align-items-center">
+            <h5 class="mb-0 fw-bold">Son Rezervasyon Talepleri</h5>
+            <a href="/Admin/Booking" class="btn btn-primary btn-sm">Tüm Rezervasyonları Gör</a>
+          </div>
+
+          <div class="table-responsive" data-simplebar>
+            <table class="table table-borderless align-middle text-nowrap">
+              <thead>
+                <tr class="table-light">
+                  <th scope="col">Müşteri Bilgileri</th>
+                  <th scope="col">Rota / Şehir</th>
+                  <th scope="col">Misafir Sayısı</th>
+                  <th scope="col">Seyahat Tarihi</th>
+                  <th scope="col">Tarih</th>
+                </tr>
+              </thead>
+              <tbody>
+                @if (ViewBag.RecentBookings != null)
+                {
+                    foreach (var booking in ViewBag.RecentBookings)
+                    {
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="me-3">
+                                <span class="round-40 text-white bg-info rounded-circle d-flex align-items-center justify-content-center fs-5">
+                                  @(string.IsNullOrEmpty(booking.FullName) ? "?" : booking.FullName[0].ToString().ToUpper())
+                                </span>
+                              </div>
+                              <div>
+                                <h6 class="mb-0 fw-bolder">@booking.FullName</h6>
+                                <p class="fs-2 text-muted mb-0">@booking.Email | @booking.Phone</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="fs-3 fw-normal mb-0">@booking.City</p>
+                          </td>
+                          <td>
+                            <span class="badge bg-light-primary text-primary rounded-pill px-3 py-1 fs-2">@booking.GuestsCount Kişi</span>
+                          </td>
+                          <td>
+                            <p class="fs-3 fw-normal mb-0">@(booking.TravelDate != null ? booking.TravelDate.ToString("dd.MM.yyyy") : "Belirtilmemiş")</p>
+                          </td>
+                          <td>
+                            <p class="fs-2 text-muted mb-0">@booking.CreatedDate.ToString("dd.MM.yyyy HH:mm")</p>
+                          </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">Kayıtlı rezervasyon talebi bulunmuyor.</td>
+                    </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <h5 class="mb-4 fw-bold">Aktif Rotalarımız & Fiyatlar</h5>
+    @if (ViewBag.PopularTours != null)
+    {
+        foreach (var tour in ViewBag.PopularTours)
+        {
+            <div class="col-sm-6 col-xl-3">
+              <div class="card overflow-hidden">
+                <div class="position-relative">
+                  <a href="/Admin/Destination">
+                    <img src="@tour.ImageUrl" class="card-img-top rounded-0" style="height: 180px; object-fit: cover;" alt="@tour.City">
+                  </a>
+                </div>
+                <div class="card-body pt-3 p-4">
+                  <h6 class="fw-semibold fs-4 mb-1">@tour.City, @tour.Country</h6>
+                  <p class="text-muted fs-2 mb-2">@tour.DayNight | Kapasite: @tour.Capacity Kişi</p>
+                  <div class="d-flex align-items-center justify-content-between">
+                    <h6 class="fw-bold text-primary fs-4 mb-0">$@tour.Price.ToString("N0")</h6>
+                    <span class="badge bg-light-success text-success px-2 py-1 fs-2">Aktif Rota</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        }
+    }
+</div>
+
+@section Scripts {
+<script>
+$(function () {
+  var profitOptions = {
+    series: [
+      {
+        name: "Rezervasyon Talepleri",
+        data: @Html.Raw(ViewBag.WeeklyBookings),
+      },
+      {
+        name: "Toplam Misafir Sayısı",
+        data: @Html.Raw(ViewBag.WeeklyGuests),
+      },
+    ],
+    chart: {
+      fontFamily: "Poppins,sans-serif",
+      type: "bar",
+      height: 360,
+      offsetY: 10,
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: true,
+      strokeDashArray: 3,
+      borderColor: "rgba(0,0,0,.1)",
+    },
+    colors: ["#1e88e5", "#fb977d"],
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: "30%",
+        endingShape: "flat",
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      show: true,
+      width: 5,
+      colors: ["transparent"],
+    },
+    xaxis: {
+      type: "category",
+      categories: ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"],
+      axisTicks: {
+        show: false,
+      },
+      axisBorder: {
+        show: false,
+      },
+      labels: {
+        style: {
+          colors: "#a1aab2",
+        },
+      },
+    },
+    yaxis: {
+      labels: {
+        style: {
+          colors: "#a1aab2",
+        },
+      },
+    },
+    fill: {
+      opacity: 1,
+      colors: ["var(--bs-primary)", "#fb977d"],
+    },
+    tooltip: {
+      theme: "dark",
+    },
+    legend: {
+      show: true,
+      position: "bottom"
+    },
+    responsive: [
+      {
+        breakpoint: 767,
+        options: {
+          stroke: {
+            show: false,
+            width: 5,
+            colors: ["transparent"],
+          },
+        },
+      },
+    ],
+  };
+
+  new ApexCharts(document.querySelector("#profit"), profitOptions).render();
+
+  var donutOptions = {
+    series: @Html.Raw(ViewBag.DonutSeries),
+    labels: @Html.Raw(ViewBag.DonutLabels),
+    chart: {
+      height: 170,
+      type: "donut",
+      fontFamily: "Plus Jakarta Sans', sans-serif",
+      foreColor: "#c6d1e9",
+    },
+    tooltip: {
+      theme: "dark",
+      fillSeriesColor: false,
+    },
+    colors: ["#21c1d6", "var(--bs-primary)", "#fb977d", "#13deb9", "#ffae1f", "#fa896b"],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    stroke: {
+      show: false,
+    },
+    responsive: [
+      {
+        breakpoint: 991,
+        options: {
+          chart: {
+            width: 150,
+          },
+        },
+      },
+    ],
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '80%',
+          background: "none",
+          labels: {
+            show: true,
+            name: {
+              show: true,
+              fontSize: "12px",
+              color: "#98aab4",
+              offsetY: 5,
+            },
+            value: {
+              show: false,
+            },
+          },
+        },
+      },
+    },
+  };
+
+  new ApexCharts(document.querySelector("#grade"), donutOptions).render();
+
+  var earningOptions = {
+    chart: {
+      id: "sparkline3",
+      type: "area",
+      height: 60,
+      sparkline: {
+        enabled: true,
+      },
+      group: "sparklines",
+      fontFamily: "Plus Jakarta Sans', sans-serif",
+      foreColor: "#adb0bb",
+    },
+    series: [
+      {
+        name: "Ciro ($)",
+        color: "#1e88e5",
+        data: @Html.Raw(ViewBag.SparklineSeries),
+      },
+    ],
+    stroke: {
+      curve: "smooth",
+      width: 2,
+    },
+    fill: {
+      colors: ["#f3feff"],
+      type: "solid",
+      opacity: 0.05,
+    },
+    markers: {
+      size: 0,
+    },
+    tooltip: {
+      theme: "dark",
+      fixed: {
+        enabled: true,
+        position: "right",
+      },
+      x: {
+        show: false,
+      },
+    },
+  };
+  
+  new ApexCharts(document.querySelector("#earning"), earningOptions).render();
+});
+</script>
+}

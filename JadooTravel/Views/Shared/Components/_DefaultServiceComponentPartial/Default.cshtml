@@ -1,51 +1,103 @@
+@model List<ResultCategoryDto>
+@inject JadooTravel.Services.LanguageServices.ILanguageService Lang
+
 <section class="pt-5 pt-md-9" id="service">
 
   <div class="container">
-    <div class="position-absolute z-index--1 end-0 d-none d-lg-block"><img src="~/public/assets/img/category/shape.svg"
-                                                                           style="max-width: 200px" alt="service"/>
+    <div class="position-absolute z-index--1 end-0 d-none d-lg-block">
+      <img src="/public/assets/img/category/shape.svg" style="max-width: 200px" alt="service"/>
     </div>
+    
     <div class="mb-7 text-center">
-      <h5 class="text-secondary">HİZMETLERİMİZ</h5>
-      <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">En İyi Hizmetleri Sunuyoruz</h3>
+      <h5 class="text-secondary text-uppercase">@Lang.T("HİZMETLERİMİZ")</h5>
+      <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">@Lang.T("En İyi Hizmetleri Sunuyoruz")</h3>
     </div>
+    
     <div class="row">
-      <div class="col-lg-3 col-sm-6 mb-6">
-        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-          <div class="card-body p-xxl-5 p-4"><img src="~/public/assets/img/category/icon1.png" width="75"
-                                                  alt="Service"/>
-            <h4 class="mb-3">Hava Durumu Tahmini</h4>
-            <p class="mb-0 fw-medium">Gideceğiniz yerin hava durumunu sizin için önceden analiz edip seyahatinizi planlıyoruz.</p>
+      @if (Model != null && Model.Any())
+      {
+          foreach (var item in Model)
+          {
+              <div class="col-lg-3 col-sm-6 mb-6">
+                <div class="card service-card h-100 bg-transparent border-0">
+                  <div class="card-body p-xxl-5 p-4 d-flex flex-column align-items-center bg-white shadow-sm rounded-4 text-center" 
+                       style="transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; height: 100%; position: relative; z-index: 2;"
+                       onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)';" 
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                    
+                    <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 75px; width: 75px;">
+                      @if (!string.IsNullOrEmpty(item.IconUrl) && (item.IconUrl.Contains("ti-") || item.IconUrl.StartsWith("ti ")))
+                      {
+                          <i class="@item.IconUrl text-danger" style="font-size: 50px;"></i>
+                      }
+                      else
+                      {
+                          <img src="@(string.IsNullOrEmpty(item.IconUrl) ? "/Spike-Admin/src/assets/images/logos/logo-icon.svg" : item.IconUrl)" 
+                               width="75" alt="Service" style="max-height: 100%; object-fit: contain;" />
+                      }
+                    </div>
+
+                    
+                    <h4 class="mb-3 text-dark fw-bold">@Lang.T(item.CategoryName)</h4>
+                    <p class="mb-0 fw-medium text-muted">@Lang.T(item.CategoryDescription)</p>
+                  </div>
+                </div>
+              </div>
+          }
+      }
+      else
+      {
+          
+          <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="card service-card h-100 bg-transparent border-0">
+              <div class="card-body p-xxl-5 p-4 d-flex flex-column align-items-center bg-white shadow-sm rounded-4 text-center" 
+                   style="transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; height: 100%; position: relative; z-index: 2;"
+                   onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 75px;"><img src="/public/assets/img/category/icon1.png" width="75" alt="Service"/></div>
+                <h4 class="mb-3 text-dark fw-bold">@Lang.T("Hava Durumu Tahmini")</h4>
+                <p class="mb-0 fw-medium text-muted text-wrap">@Lang.T("Gideceğiniz yerin hava durumunu sizin için önceden analiz edip seyahatinizi planlıyoruz.")</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-6">
-        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-          <div class="card-body p-xxl-5 p-4"><img src="~/public/assets/img/category/icon2.png" width="75"
-                                                  alt="Service"/>
-            <h4 class="mb-3">En İyi Uçuşlar</h4>
-            <p class="mb-0 fw-medium">Dünyanın her yerine en konforlu ve en uygun fiyatlı uçak biletlerini listeliyoruz.</p>
+          <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="card service-card h-100 bg-transparent border-0">
+              <div class="card-body p-xxl-5 p-4 d-flex flex-column align-items-center bg-white shadow-sm rounded-4 text-center" 
+                   style="transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; height: 100%; position: relative; z-index: 2;"
+                   onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 75px;"><img src="/public/assets/img/category/icon2.png" width="75" alt="Service"/></div>
+                <h4 class="mb-3 text-dark fw-bold">@Lang.T("En İyi Uçuşlar")</h4>
+                <p class="mb-0 fw-medium text-muted text-wrap">@Lang.T("Dünyanın her yerine en konforlu ve en uygun fiyatlı uçak biletlerini listeliyoruz.")</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-6">
-        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-          <div class="card-body p-xxl-5 p-4"><img src="~/public/assets/img/category/icon3.png" width="75"
-                                                  alt="Service"/>
-            <h4 class="mb-3">Yerel Etkinlikler</h4>
-            <p class="mb-0 fw-medium">Gittiğiniz şehirdeki festivalleri, turları ve tüm yerel etkinlikleri kaçırmayın.</p>
+          <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="card service-card h-100 bg-transparent border-0">
+              <div class="card-body p-xxl-5 p-4 d-flex flex-column align-items-center bg-white shadow-sm rounded-4 text-center" 
+                   style="transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; height: 100%; position: relative; z-index: 2;"
+                   onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 75px;"><img src="/public/assets/img/category/icon3.png" width="75" alt="Service"/></div>
+                <h4 class="mb-3 text-dark fw-bold">@Lang.T("Yerel Etkinlikler")</h4>
+                <p class="mb-0 fw-medium text-muted text-wrap">@Lang.T("Gittiğiniz şehirdeki festivalleri, turları ve tüm yerel etkinlikleri kaçırmayın.")</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 mb-6">
-        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-          <div class="card-body p-xxl-5 p-4"><img src="~/public/assets/img/category/icon4.png" width="75"
-                                                  alt="Service"/>
-            <h4 class="mb-3">Kişiselleştirme</h4>
-            <p class="mb-0 fw-medium">Seyahat planınızı kendi tercihlerinize ve bütçenize göre tamamen özelleştirin.</p>
+          <div class="col-lg-3 col-sm-6 mb-6">
+            <div class="card service-card h-100 bg-transparent border-0">
+              <div class="card-body p-xxl-5 p-4 d-flex flex-column align-items-center bg-white shadow-sm rounded-4 text-center" 
+                   style="transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; height: 100%; position: relative; z-index: 2;"
+                   onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)';">
+                <div class="mb-3 d-flex align-items-center justify-content-center" style="height: 75px;"><img src="/public/assets/img/category/icon4.png" width="75" alt="Service"/></div>
+                <h4 class="mb-3 text-dark fw-bold">@Lang.T("Kişiselleştirme")</h4>
+                <p class="mb-0 fw-medium text-muted text-wrap">@Lang.T("Seyahat planınızı kendi tercihlerinize ve bütçenize göre tamamen özelleştirin.")</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+      }
     </div>
-  </div><!-- end of .container-->
+  </div>
 
 </section>

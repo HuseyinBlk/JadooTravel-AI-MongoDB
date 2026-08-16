@@ -1,0 +1,132 @@
+@model List<ResultFeatureDto>
+
+@{
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+@functions {
+  string GetEmbedUrl(string url)
+  {
+    if (string.IsNullOrEmpty(url)) return "";
+    if (url.Contains("youtube.com/watch?v="))
+    {
+      return url.Replace("watch?v=", "embed/").Split('&')[0];
+    }
+    else if (url.Contains("youtu.be/"))
+    {
+      return url.Replace("youtu.be/", "youtube.com/embed/");
+    }
+    return url;
+  }
+}
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        
+        @if (Model != null && Model.Any())
+        {
+            var activeFeature = Model.First();
+
+            
+            <div class="d-flex mb-4 justify-content-between align-items-center">
+              <div>
+                <h5 class="mb-1 fw-bold d-flex align-items-center gap-2">
+                  <iconify-icon icon="solar:screencast-bold-duotone" class="fs-7 text-primary"></iconify-icon>
+                  Aktif Banner Bilgileri
+                </h5>
+                <p class="text-muted mb-0 fs-2">Web sitenizin ana sayfasındaki tanıtım alanında şu an gösterilen bilgiler.</p>
+              </div>
+              
+              <div class="d-flex gap-2">
+                <a asp-controller="Feature" asp-action="UpdateFeature" asp-route-id="@activeFeature.FeatureId" class="btn btn-warning text-white d-flex align-items-center gap-2">
+                  <i class="ti ti-edit fs-5"></i>
+                  Düzenle
+                </a>
+                <a asp-controller="Feature" asp-action="DeleteFeature" asp-route-id="@activeFeature.FeatureId" class="btn btn-outline-danger d-flex align-items-center gap-2" onclick="return confirm('Bu banner bilgisini silmek istediğinize emin misiniz? Sitedeki banner alanı boş kalacaktır.')">
+                  <i class="ti ti-trash fs-5"></i>
+                  Sil
+                </a>
+              </div>
+            </div>
+
+            <hr class="text-muted opacity-25">
+
+            
+            <div class="row g-4 mt-2">
+              
+              
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3 border-start border-primary border-3">
+                  <span class="text-muted fs-2 d-block mb-1">Üst Başlık (Küçük Başlık)</span>
+                  <span class="fw-semibold text-dark fs-4">@activeFeature.Title</span>
+                </div>
+              </div>
+              
+              
+              <div class="col-md-6">
+                <div class="p-3 bg-light rounded-3 border-start border-primary border-3">
+                  <span class="text-muted fs-2 d-block mb-1">Ana Başlık (Büyük Başlık)</span>
+                  <span class="fw-semibold text-dark fs-4">@activeFeature.MainTitle</span>
+                </div>
+              </div>
+
+              
+              <div class="col-12">
+                <div class="p-3 bg-light rounded-3 border-start border-info border-3">
+                  <span class="text-muted fs-2 d-block mb-1">Tanıtım Videosu Adresi</span>
+                  <a href="@activeFeature.VideoUrl" target="_blank" class="fw-semibold text-info fs-4 d-inline-flex align-items-center gap-2 mb-3">
+                    <i class="ti ti-video fs-5"></i> @activeFeature.VideoUrl
+                  </a>
+                  
+                  
+                  @if (!string.IsNullOrEmpty(activeFeature.VideoUrl))
+                  {
+                      var embedUrl = GetEmbedUrl(activeFeature.VideoUrl);
+                      <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm border mt-2" style="max-width: 600px;">
+                        <iframe src="@embedUrl" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                      </div>
+                  }
+                </div>
+              </div>
+
+              
+              <div class="col-12">
+                <div class="p-3 bg-light rounded-3 border-start border-secondary border-3">
+                  <span class="text-muted fs-2 d-block mb-1">Açıklama Metni</span>
+                  <p class="mb-0 fw-normal text-dark fs-3 lh-base">
+                    @activeFeature.Description
+                  </p>
+                </div>
+              </div>
+
+            </div>
+        }
+        else
+        {
+            <div class="text-center py-5">
+              <div class="mb-3">
+                <iconify-icon icon="solar:videocamera-record-bold-duotone" class="text-muted" style="font-size: 80px;"></iconify-icon>
+              </div>
+              <h4 class="fw-bold text-dark mb-2">Henüz Banner Bilgisi Eklenmemiş</h4>
+              <p class="text-muted fs-3 mb-4 mx-auto" style="max-width: 450px;">
+                Ana sayfanızın en üstünde yer alan video tanıtım alanı şu an boş durumda. Web sitenizin düzgün görünmesi için lütfen yeni bir banner içeriği tanımlayın.
+              </p>
+              
+              <a asp-controller="Feature" asp-action="CreateFeature" class="btn btn-primary d-inline-flex align-items-center gap-2 px-4 py-2">
+                <i class="ti ti-plus fs-5"></i>
+                Yeni Banner Ekle
+              </a>
+            </div>
+        }
+
+      </div>
+    </div>
+  </div>
+</div>

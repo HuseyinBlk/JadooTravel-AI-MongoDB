@@ -1,33 +1,34 @@
+@model List<JadooTravel.Dtos.PartnerDtos.ResultPartnerDto>
+
 <div class="position-relative pt-9 pt-lg-8 pb-6 pb-lg-8">
     <div class="container">
         <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2 flex-center">
-            <div class="col">
-                <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                    <div class="card-body text-center"> <img class="img-fluid" src="~/public/assets/img/partner/1.png" alt=""/></div>
+            
+            @if (Model != null && Model.Any())
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card shadow-hover mb-4" style="border-radius:10px;">
+                            
+                            <div class="card-body text-center d-flex align-items-center justify-content-center" style="height: 80px;"> 
+                                <img class="img-fluid" src="@item.PhotoUrl" alt="Partner Logo" 
+                                     style="max-height: 50px; object-fit: contain;" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                
+                <div class="col-12 text-center py-4">
+                    <span class="text-muted fs-1 fw-medium">
+                        <i class="ti ti-info-circle me-1"></i> Henüz sponsor marka bulunmamaktadır.
+                    </span>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                    <div class="card-body text-center"> <img class="img-fluid" src="~/public/assets/img/partner/2.png" alt=""/></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                    <div class="card-body text-center"> <img class="img-fluid" src="~/public/assets/img/partner/3.png" alt=""/></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                    <div class="card-body text-center"> <img class="img-fluid" src="~/public/assets/img/partner/4.png" alt=""/></div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-hover mb-4" style="border-radius:10px;">
-                    <div class="card-body text-center"> <img class="img-fluid" src="~/public/assets/img/partner/5.png" alt=""/></div>
-                </div>
-            </div>
+            }
+            
         </div>
     </div>
 </div>
-
-

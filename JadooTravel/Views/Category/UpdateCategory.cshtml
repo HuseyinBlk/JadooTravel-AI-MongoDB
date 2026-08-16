@@ -1,19 +1,73 @@
 @model GetCategoryByIdDto
 
 @{
-    Layout = null;
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center gap-2">
+          <iconify-icon icon="solar:pen-new-square-bold-duotone" class="fs-7 text-warning"></iconify-icon>
+          Kategori Güncelle
+        </h5>
+        <p class="text-muted mb-4 fs-2">Seçili kategorinin bilgilerini güncelleyin.</p>
 
-<div class="container">
-    <br/><br/>
-    <form method="post">
-        <input type="hidden" asp-for="CategoryId" />
-        <input type="text" class="form-control" asp-for="CategoryName" placeholder="Kategori Adını Giriniz"/>
-        <br/>
-        <textarea type="text" class="form-control" asp-for="CategoryDescription" placeholder="Açıklama Giriniz"  rows="3"></textarea>
-        <br/>
-        <button type="submit" class="btn btn-primary">Kategoriyi Güncelle</button>
-    </form>
+        <form asp-controller="Category" asp-action="UpdateCategory" method="post">
+          
+          <input type="hidden" asp-for="CategoryId" />
+
+          <div class="row">
+            
+            
+            <div class="col-md-6 mb-3">
+              <label for="CategoryName" class="form-label fw-semibold">Kategori Adı</label>
+              <input type="text" class="form-control" asp-for="CategoryName" required />
+              <span class="text-danger fs-2" asp-validation-for="CategoryName"></span>
+            </div>
+
+            
+            <div class="col-md-6 mb-3">
+              <label for="IconUrl" class="form-label fw-semibold">İkon URL veya Class Adı</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light text-muted border-end-0">
+                  <i class="ti ti-photo"></i>
+                </span>
+                <input type="text" class="form-control border-start-0" asp-for="IconUrl" required />
+              </div>
+              <span class="text-danger fs-2" asp-validation-for="IconUrl"></span>
+            </div>
+
+            
+            <div class="col-12 mb-3">
+              <label for="CategoryDescription" class="form-label fw-semibold">Kategori Açıklaması</label>
+              <textarea class="form-control" asp-for="CategoryDescription" rows="4" required></textarea>
+              <span class="text-danger fs-2" asp-validation-for="CategoryDescription"></span>
+            </div>
+
+            
+            <div class="col-12 mb-4">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" asp-for="Status" id="StatusSwitch">
+                <label class="form-check-label fw-semibold" for="StatusSwitch">Kategori Yayında mı? (Aktif/Pasif)</label>
+              </div>
+            </div>
+
+            
+            <div class="col-12 d-flex justify-content-end gap-2">
+              <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary">Vazgeç</a>
+              <button type="submit" class="btn btn-warning text-white d-flex align-items-center gap-2">
+                <i class="ti ti-refresh fs-5"></i>
+                Değişiklikleri Güncelle
+              </button>
+            </div>
+            
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
 </div>

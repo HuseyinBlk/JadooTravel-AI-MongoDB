@@ -1,52 +1,65 @@
+@inject JadooTravel.Services.LanguageServices.ILanguageService Lang
+
 <section class="pb-0 pb-lg-4">
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0"><img class="mb-4" src="~/public/assets/img/logo2.svg" width="150" alt="jadoo"/>
-        <p class="fs--1 text-secondary mb-0 fw-medium">Seyahatinizi dakikalar içinde planlayın, seyahatinizin kontrolünü tamamen elinizde tutun.</p>
+      
+      <div class="col-lg-3 col-md-7 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+        <img class="mb-4" src="/public/assets/img/logo2.svg" width="150" alt="jadoo"/>
+        <p class="fs--1 text-secondary mb-0 fw-medium">
+          @Lang.T("Seyahatinizi dakikalar içinde planlayın, seyahatinizin kontrolünü tamamen elinizde tutun.")
+        </p>
       </div>
+      
+      
       <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
-        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Şirketimiz</h4>
+        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">@Lang.T("Şirketimiz")</h4>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Hakkımızda</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Kariyer</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Mobil</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Hakkımızda")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Kariyer")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Mobil")</a></li>
         </ul>
       </div>
+      
+      
       <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
-        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">İletişim</h4>
+        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">@Lang.T("İletişim")</h4>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Yardım/SSS</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Basın</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Ortaklık</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Yardım/SSS")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Basın")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Ortaklık")</a></li>
         </ul>
       </div>
+      
+      
       <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 order-lg-3 order-md-4">
-        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Daha Fazlası</h4>
+        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">@Lang.T("Daha Fazlası")</h4>
         <ul class="list-unstyled mb-0">
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Bilet Ücretleri</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Havayolları</a></li>
-          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Düşük Ücret İpuçları</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Bilet Ücretleri")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Havayolları")</a></li>
+          <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">@Lang.T("Düşük Ücret İpuçları")</a></li>
         </ul>
       </div>
+      
+      
       <div class="col-lg-3 col-md-5 col-12 mb-4 mb-md-6 mb-lg-0 order-lg-4 order-md-1">
         <div class="icon-group mb-4">
-          
           <a class="text-decoration-none icon-item shadow-social" id="facebook" href="#!"><i class="fab fa-facebook-f"></i></a>
           <a class="text-decoration-none icon-item shadow-social" id="instagram" href="#!"><i class="fab fa-instagram"></i></a>
           <a class="text-decoration-none icon-item shadow-social" id="twitter" href="#!"><i class="fab fa-twitter"> </i></a>
         </div>
-        <h4 class="fw-medium font-sans-serif text-secondary mb-3">Uygulamamızı Keşfedin</h4>
+        <h4 class="fw-medium font-sans-serif text-secondary mb-3">@Lang.T("Uygulamamızı Keşfedin")</h4>
         <div class="d-flex align-items-center">
-          <a href="#!"> <img class="me-2" src="~/public/assets/img/play-store.png" alt="play store"/></a>
-          <a href="#!"> <img src="~/public/assets/img/apple-store.png" alt="apple store"/></a>
+          <a href="#!"> <img class="me-2" src="/public/assets/img/play-store.png" alt="play store"/></a>
+          <a href="#!"> <img src="/public/assets/img/apple-store.png" alt="apple store"/></a>
         </div>
       </div>
     </div>
-  </div><!-- end of .container-->
+  </div>
 
 </section>
 
 <div class="py-5 text-center">
-  <p class="mb-0 text-secondary fs--1 fw-medium">Tüm hakları saklıdır jadoo.co </p>
+  <p class="mb-0 text-secondary fs--1 fw-medium">@Lang.T("Tüm hakları saklıdır jadoo.co")</p>
 </div>

@@ -1,0 +1,143 @@
+@model CreateFeatureDto
+@{
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+  
+  <div class="col-lg-8">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center gap-2">
+          <iconify-icon icon="solar:add-square-bold-duotone" class="fs-7 text-primary"></iconify-icon>
+          Yeni Banner Bilgisi Tanımla
+        </h5>
+        <p class="text-muted mb-4 fs-2">Aşağıdaki alanları doldurarak ana sayfa tanıtım bölümünü ilk kez yayına alın.</p>
+
+        
+        <form method="post" action="/Feature/CreateFeature">
+          <div class="row">
+            
+            
+            <div class="col-md-6 mb-3">
+              <label for="Title" class="form-label fw-semibold">Üst Başlık (Küçük Başlık)</label>
+              <input type="text" class="form-control" placeholder="Örn: KATEGORİLERİMİZ" asp-for="Title" required />
+            </div>
+
+            
+            <div class="col-md-6 mb-3">
+              <label for="MainTitle" class="form-label fw-semibold">Ana Başlık (Büyük Başlık)</label>
+              <input type="text" class="form-control" asp-for="MainTitle" placeholder="Örn: Sizin İçin En İyi Hizmetleri Sunuyoruz" required />
+            </div>
+
+            
+            <div class="col-12 mb-3">
+              <label for="VideoUrl" class="form-label fw-semibold">Tanıtım Videosu URL (YouTube vb.)</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light text-muted border-end-0">
+                  <i class="ti ti-link"></i>
+                </span>
+                <input type="url" class="form-control border-start-0" asp-for="VideoUrl" placeholder="https://www.youtube.com/watch?v=..." required />
+              </div>
+            </div>
+
+            
+            <div class="col-12 mb-4">
+              <label for="Description" class="form-label fw-semibold">Detaylı Açıklama</label>
+              <textarea class="form-control" asp-for="Description" rows="6" placeholder="Bu seyahat tanıtımı hakkında kısa ve etkileyici bir açıklama yazın..." required></textarea>
+            </div>
+
+            
+            <div class="col-12 d-flex justify-content-end gap-3">
+              <a href="/Admin/Feature" class="btn btn-outline-secondary">Vazgeç</a>
+              <button type="submit" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2">
+                <i class="ti ti-device-floppy fs-5"></i>
+                İçeriği Kaydet ve Yayınla
+              </button>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-lg-4">
+    <div class="card bg-light-primary text-primary border-0 overflow-hidden position-relative shadow-sm h-100">
+      <div class="card-body p-4 d-flex flex-column justify-content-between">
+        <div>
+          
+          <div class="d-flex align-items-center gap-2 mb-4">
+            <span class="badge bg-primary text-white rounded-pill px-3 py-2 fs-2 fw-semibold">Canlı Önizleme</span>
+          </div>
+
+          
+          <span class="text-uppercase tracking-wider fs-2 fw-bolder text-primary-emphasis d-block mb-2" id="preview-small-title">ÜST BAŞLIK</span>
+          <h3 class="fw-bolder text-dark mb-3 lh-sm" id="preview-main-title">Ana Başlık Yazısı Burada Görünecek</h3>
+          <p class="text-muted fs-3 mb-4 lh-base" id="preview-description">
+            Forma açıklama yazmaya başladığınızda bu alandaki yazı anlık olarak değişecek ve seyahat severleri bilgilendirecektir.
+          </p>
+        </div>
+
+        
+        <div class="mt-4 pt-3 border-top border-primary-subtle">
+          <span class="text-dark fw-semibold fs-3 d-block mb-2">Tanıtım Videosu Önizleme</span>
+  
+          
+          <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm border d-none" id="preview-video-container">
+            <iframe src="" id="preview-video-iframe" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+          </div>
+  
+          <p class="text-muted fs-2 mb-0" id="preview-video-placeholder">Geçerli bir video adresi girdiğinizde oynatıcı burada belirecektir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section Scripts {
+  <script>
+    function getYoutubeEmbedUrl(url) {
+      if (!url) return '';
+      var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+      var match = url.match(regExp);
+      if (match && match[2].length == 11) {
+        return 'https://www.youtube.com/embed/' + match[2];
+      }
+      return url;
+    }
+
+    $(document).ready(function() {
+      $('#Title').on('input', function() {
+        var val = $(this).val();
+        $('#preview-small-title').text(val ? val.toUpperCase() : "ÜST BAŞLIK");
+      });
+
+      $('#MainTitle').on('input', function() {
+        var val = $(this).val();
+        $('#preview-main-title').text(val ? val : "Ana Başlık Yazısı Burada Görünecek");
+      });
+
+      $('#Description').on('input', function() {
+        var val = $(this).val();
+        $('#preview-description').text(val ? val : "Forma açıklama yazmaya başladığınızda bu alandaki yazı anlık olarak değişecek.");
+      });
+
+      $('#VideoUrl').on('input', function() {
+        var val = $(this).val();
+        var embedUrl = getYoutubeEmbedUrl(val);
+
+        if (embedUrl) {
+          $('#preview-video-iframe').attr('src', embedUrl);
+          $('#preview-video-container').removeClass('d-none');
+          $('#preview-video-placeholder').addClass('d-none');
+        } else {
+          $('#preview-video-container').addClass('d-none');
+          $('#preview-video-placeholder').removeClass('d-none');
+        }
+      });
+    });
+  </script>
+}

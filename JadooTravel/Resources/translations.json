@@ -1,0 +1,506 @@
+﻿{
+  "D\u00FCnyadaki En \u0130yi Rotalar\u0131 Ke\u015Ffedin": {
+    "TR": "D\u00FCnyadaki En \u0130yi Rotalar\u0131 Ke\u015Ffedin",
+    "EN": "Discover the Best Routes in the World",
+    "ESP": "Descubre las Mejores Rutas del Mundo",
+    "FR": "D\u00E9couvrez les Meilleurs Itin\u00E9raires au Monde"
+  },
+  "Seyahat et, keyfini \u00E7\u0131kar ve hayat\u0131 dolu dolu ya\u015Fa": {
+    "TR": "Seyahat et, keyfini \u00E7\u0131kar ve hayat\u0131 dolu dolu ya\u015Fa",
+    "EN": "Travel, enjoy and live life to the fullest",
+    "ESP": "Viaja, disfruta y vive la vida al m\u00E1ximo",
+    "FR": "Voyagez, profitez et croquez la vie \u00E0 pleines dents"
+  },
+  "D\u00FCnyan\u0131n en g\u00FCzel k\u00F6\u015Felerini ke\u015Ffetmeniz, an\u0131n tad\u0131n\u0131 \u00E7\u0131karman\u0131z ve yeni deneyimlerle hayat\u0131n\u0131z\u0131 zenginle\u015Ftirmeniz i\u00E7in buraday\u0131z. Sizin i\u00E7in en uygun seyahat rotalar\u0131n\u0131 haz\u0131rl\u0131yoruz.": {
+    "TR": "D\u00FCnyan\u0131n en g\u00FCzel k\u00F6\u015Felerini ke\u015Ffetmeniz, an\u0131n tad\u0131n\u0131 \u00E7\u0131karman\u0131z ve yeni deneyimlerle hayat\u0131n\u0131z\u0131 zenginle\u015Ftirmeniz i\u00E7in buraday\u0131z. Sizin i\u00E7in en uygun seyahat rotalar\u0131n\u0131 haz\u0131rl\u0131yoruz.",
+    "EN": "We are here for you to discover the most beautiful corners of the world, enjoy the moment, and enrich your life with new experiences. We prepare the most suitable travel routes for you.",
+    "ESP": "Estamos aqu\u00ED para que descubras los rincones m\u00E1s bellos del mundo, disfrutes del momento y enriquezcas tu vida con nuevas experiencias. Preparamos las rutas de viaje m\u00E1s adecuadas para ti.",
+    "FR": "Nous sommes l\u00E0 pour vous aider \u00E0 d\u00E9couvrir les plus beaux recoins du monde, \u00E0 profiter de l\u0027instant pr\u00E9sent et \u00E0 enrichir votre vie de nouvelles exp\u00E9riences. Nous pr\u00E9parons les itin\u00E9raires de voyage qui vous correspondent le mieux."
+  },
+  "Daha Fazla Ke\u015Ffet": {
+    "TR": "Daha Fazla Ke\u015Ffet",
+    "EN": "Explore More",
+    "ESP": "Explorar M\u00E1s",
+    "FR": "Explorer Plus"
+  },
+  "Tan\u0131t\u0131m\u0131 \u0130zle": {
+    "TR": "Tan\u0131t\u0131m\u0131 \u0130zle",
+    "EN": "Watch Intro",
+    "ESP": "Ver Presentaci\u00F3n",
+    "FR": "Voir la Pr\u00E9sentation"
+  },
+  "H\u0130ZMETLER\u0130M\u0130Z": {
+    "TR": "H\u0130ZMETLER\u0130M\u0130Z",
+    "EN": "OUR SERVICES",
+    "ESP": "NUESTROS SERVICIOS",
+    "FR": "NOS SERVICES"
+  },
+  "En \u0130yi Hizmetleri Sunuyoruz": {
+    "TR": "En \u0130yi Hizmetleri Sunuyoruz",
+    "EN": "We Offer the Best Services",
+    "ESP": "Ofrecemos los Mejores Servicios",
+    "FR": "Nous Offrons les Meilleurs Services"
+  },
+  "Ekstrem Maceralar": {
+    "TR": "Ekstrem Maceralar",
+    "EN": "Extreme Adventures",
+    "ESP": "Aventuras Extrems",
+    "FR": "Aventures Extr\u00EAmes"
+  },
+  "Rafting, yama\u00E7 para\u015F\u00FCt\u00FC ve zirve t\u0131rman\u0131\u015Flar\u0131 gibi adrenalini y\u00FCksek, s\u0131n\u0131rlar\u0131 ve do\u011Fay\u0131 zorlayan macera turlar\u0131.": {
+    "TR": "Rafting, yama\u00E7 para\u015F\u00FCt\u00FC ve zirve t\u0131rman\u0131\u015Flar\u0131 gibi adrenalini y\u00FCksek, s\u0131n\u0131rlar\u0131 ve do\u011Fay\u0131 zorlayan macera turlar\u0131.",
+    "EN": "High-adrenaline adventure tours that push limits and nature, such as rafting, paragliding, and summit climbs.",
+    "ESP": "Tours de aventura de alta adrenalina que desaf\u00EDan los l\u00EDmites y la naturaleza, como rafting, parapente y ascensiones a la cima.",
+    "FR": "Circuits d\u0027aventure \u00E0 forte adr\u00E9naline qui repoussent les limites et la nature, tels que le rafting, le parapente et l\u0027ascension de sommets."
+  },
+  "Mavi Yolculuklar": {
+    "TR": "Mavi Yolculuklar",
+    "EN": "Blue Cruises",
+    "ESP": "Cruceros Azules",
+    "FR": "Croisi\u00E8res Bleues"
+  },
+  "Ege ve Akdeniz\u0027in en bakir koylar\u0131nda l\u00FCks yatlar ve modern cruise gemileriyle konforlu ve r\u00FCya gibi deniz seyahatleri.": {
+    "TR": "Ege ve Akdeniz\u0027in en bakir koylar\u0131nda l\u00FCks yatlar ve modern cruise gemileriyle konforlu ve r\u00FCya gibi deniz seyahatleri.",
+    "EN": "Comfortable and dreamlike sea voyages with luxury yachts and modern cruise ships in the most pristine bays of the Aegean and Mediterranean.",
+    "ESP": "Viajes por mar c\u00F3modos y de ensue\u00F1o con yates de lujo y modernos cruceros en las bah\u00EDas m\u00E1s v\u00EDrgenes del Egeo y el Mediterr\u00E1neo.",
+    "FR": "Voyages en mer confortables et f\u00E9eriques \u00E0 bord de yachts de luxe et de navires de croisi\u00E8re modernes dans les baies les plus vierges de la mer \u00C9g\u00E9e et de la M\u00E9diterran\u00E9e."
+  },
+  "K\u00FClt\u00FCr \u0026 Tarih": {
+    "TR": "K\u00FClt\u00FCr \u0026 Tarih",
+    "EN": "Culture \u0026 History",
+    "ESP": "Cultura e Historia",
+    "FR": "Culture et Histoire"
+  },
+  "Uzman arkeolog ve tarih\u00E7i rehberler e\u015Fli\u011Finde antik kentlerin, kadim medeniyetlerin ve gizemli tarihi miraslar\u0131n izini s\u00FCr\u00FCn.": {
+    "TR": "Uzman arkeolog ve tarih\u00E7i rehberler e\u015Fli\u011Finde antik kentlerin, kadim medeniyetlerin ve gizemli tarihi miraslar\u0131n izini s\u00FCr\u00FCn.",
+    "EN": "Trace ancient cities, ancient civilizations, and mysterious historical heritage accompanied by expert archaeologist and historian guides.",
+    "ESP": "Sigue los pasos de ciudades antiguas, civilizaciones milenarias y un misterioso patrimonio hist\u00F3rico acompa\u00F1ado de gu\u00EDas expertos arque\u00F3logos e historiadores.",
+    "FR": "Sur les traces des cit\u00E9s antiques, des civilisations anciennes et d\u0027un patrimoine historique myst\u00E9rieux, accompagn\u00E9 de guides arch\u00E9ologues et historiens experts."
+  },
+  "Foto Safari": {
+    "TR": "Foto Safari",
+    "EN": "Photo Safari",
+    "ESP": "Foto Safari",
+    "FR": "Safari Photo"
+  },
+  "B\u00FCy\u00FCleyici g\u00FCn bat\u0131mlar\u0131nda ve do\u011Fal ya\u015Fam parklar\u0131nda, profesyonel e\u011Fitmenler e\u015Fli\u011Finde viz\u00F6rden d\u00FCnyay\u0131 yakalama turlar.": {
+    "TR": "B\u00FCy\u00FCleyici g\u00FCn bat\u0131mlar\u0131nda ve do\u011Fal ya\u015Fam parklar\u0131nda, profesyonel e\u011Fitmenler e\u015Fli\u011Finde viz\u00F6rden d\u00FCnyay\u0131 yakalama turlar.",
+    "EN": "Tours to capture the world through the viewfinder during fascinating sunsets and in wildlife parks, accompanied by professional instructors.",
+    "ESP": "Tours para capturar el mundo a trav\u00E9s del visor durante atardeceres fascinantes y en parques naturales, acompa\u00F1ados de instructores profesionales.",
+    "FR": "Des circuits pour capturer le monde \u00E0 travers le viseur lors de couchers de soleil fascinants et dans des parcs animaliers, accompagn\u00E9s d\u0027instructeurs professionnels."
+  },
+  "En \u00C7ok Tercih Edilenler": {
+    "TR": "En \u00C7ok Tercih Edilenler",
+    "EN": "Most Popular",
+    "ESP": "Los M\u00E1s Preferidos",
+    "FR": "Les Plus Populaires"
+  },
+  "Tur Rotalar\u0131": {
+    "TR": "Tur Rotalar\u0131",
+    "EN": "Tour Routes",
+    "ESP": "Rutas de Tours",
+    "FR": "Itin\u00E9raires de Visite"
+  },
+  "Kyoto": {
+    "TR": "Kyoto",
+    "EN": "Kyoto",
+    "ESP": "Kioto",
+    "FR": "Kyoto"
+  },
+  "Japonya": {
+    "TR": "Japonya",
+    "EN": "Japan",
+    "ESP": "Jap\u00F3n",
+    "FR": "Japon"
+  },
+  "7 G\u00FCn 6 Gece": {
+    "TR": "7 G\u00FCn 6 Gece",
+    "EN": "7 Days 6 Nights",
+    "ESP": "7 D\u00EDas 6 Noches",
+    "FR": "7 Jours 6 Nuits"
+  },
+  "Roma": {
+    "TR": "Roma",
+    "EN": "Rome",
+    "ESP": "Roma",
+    "FR": "Rome"
+  },
+  "\u0130talya": {
+    "TR": "\u0130talya",
+    "EN": "Italy",
+    "ESP": "Italia",
+    "FR": "Italie"
+  },
+  "5 G\u00FCn 4 Gece": {
+    "TR": "5 G\u00FCn 4 Gece",
+    "EN": "5 Days 4 Nights",
+    "ESP": "5 D\u00EDas 4 Noches",
+    "FR": "5 Jours 4 Nuits"
+  },
+  "Troms\u00F8": {
+    "TR": "Troms\u00F8",
+    "EN": "Troms\u00F8",
+    "ESP": "Troms\u00F8",
+    "FR": "Troms\u00F8"
+  },
+  "Norve\u00E7": {
+    "TR": "Norve\u00E7",
+    "EN": "Norway",
+    "ESP": "Noruega",
+    "FR": "Norv\u00E8ge"
+  },
+  "6 G\u00FCn 5 Gece": {
+    "TR": "6 G\u00FCn 5 Gece",
+    "EN": "6 Days 5 Nights",
+    "ESP": "6 D\u00EDas 5 Noches",
+    "FR": "6 Jours 5 Nuits"
+  },
+  "Kolay ve H\u0131zl\u0131": {
+    "TR": "Kolay ve H\u0131zl\u0131",
+    "EN": "Easy and Fast",
+    "ESP": "F\u00E1cil y R\u00E1pido",
+    "FR": "Facile et Rapide"
+  },
+  "Bir sonraki seyahatinizi 3 kolay ad\u0131mda planlay\u0131n": {
+    "TR": "Bir sonraki seyahatinizi 3 kolay ad\u0131mda planlay\u0131n",
+    "EN": "Plan your next trip in 3 easy steps",
+    "ESP": "Planifica tu pr\u00F3ximo viaje en 3 sencillos pasos",
+    "FR": "Planifiez votre prochain voyage en 3 \u00E9tapes simples"
+  },
+  "Seyahatinizi Planlay\u0131n": {
+    "TR": "Seyahatinizi Planlay\u0131n",
+    "EN": "Plan Your Trip",
+    "ESP": "Planifica Tu Viaje",
+    "FR": "Planifiez Votre Voyage"
+  },
+  "Gidi\u015F-d\u00F6n\u00FC\u015F tarihinizi ve ki\u015Fi say\u0131s\u0131n\u0131 se\u00E7erek size en uygun u\u00E7u\u015F ve otel planlamas\u0131n\u0131 olu\u015Fturun.": {
+    "TR": "Gidi\u015F-d\u00F6n\u00FC\u015F tarihinizi ve ki\u015Fi say\u0131s\u0131n\u0131 se\u00E7erek size en uygun u\u00E7u\u015F ve otel planlamas\u0131n\u0131 olu\u015Fturun.",
+    "EN": "Create the most suitable flight and hotel plan for you by selecting your round-trip dates and the number of people.",
+    "ESP": "Crea el plan de vuelo y hotel m\u00E1s adecuado para ti seleccionando tus fechas de ida y vuelta y el n\u00FAmero de personas.",
+    "FR": "Cr\u00E9ez le plan de vol et d\u0027h\u00F4tel qui vous convient le mieux en s\u00E9lectionnant vos dates de aller-retour et le nombre de personnes."
+  },
+  "\u00D6demeyi Ger\u00E7ekle\u015Ftirin": {
+    "TR": "\u00D6demeyi Ger\u00E7ekle\u015Ftirin",
+    "EN": "Make the Payment",
+    "ESP": "Realizar el Pago",
+    "FR": "Effectuer le Paiement"
+  },
+  "Seyahat plan\u0131n\u0131z\u0131 netle\u015Ftirdikten sonra 3D Secure g\u00FCvencesiyle h\u0131zl\u0131 ve g\u00FCvenli \u00F6demenizi ger\u00E7ekle\u015Ftirin.": {
+    "TR": "Seyahat plan\u0131n\u0131z\u0131 netle\u015Ftirdikten sonra 3D Secure g\u00FCvencesiyle h\u0131zl\u0131 ve g\u00FCvenli \u00F6demenizi ger\u00E7ekle\u015Ftirin.",
+    "EN": "After finalizing your travel plan, make your fast and secure payment with 3D Secure assurance.",
+    "ESP": "Despu\u00E9s de finalizar tu plan de viaje, realiza tu pago r\u00E1pido y seguro con la garant\u00EDa de 3D Secure.",
+    "FR": "Apr\u00E8s avoir finalis\u00E9 votre plan de voyage, effectuez votre paiement rapide et s\u00E9curis\u00E9 avec la garantie 3D Secure."
+  },
+  "Havaliman\u0131na Ula\u015F\u0131n": {
+    "TR": "Havaliman\u0131na Ula\u015F\u0131n",
+    "EN": "Reach the Airport",
+    "ESP": "Llega al Aeropuerto",
+    "FR": "Rejoignez l\u0027A\u00E9roport"
+  },
+  "U\u00E7u\u015F g\u00FCn\u00FC havaliman\u0131na vaktinde ula\u015F\u0131n, gerisini dert etmeden hayalinizdeki tatilin tad\u0131n\u0131 \u00E7\u0131kar\u0131n.": {
+    "TR": "U\u00E7u\u015F g\u00FCn\u00FC havaliman\u0131na vaktinde ula\u015F\u0131n, gerisini dert etmeden hayalinizdeki tatilin tad\u0131n\u0131 \u00E7\u0131kar\u0131n.",
+    "EN": "Arrive at the airport on time on the day of the flight, and enjoy your dream vacation without worrying about the rest.",
+    "ESP": "Llega al aeropuerto a tiempo el d\u00EDa del vuelo y disfruta de las vacaciones de tus sue\u00F1os sin preocuparte por el resto.",
+    "FR": "Arrivez \u00E0 l\u0027a\u00E9roport \u00E0 l\u0027heure le jour du vol et profitez de vos vacances de r\u00EAve sans vous soucier du reste."
+  },
+  "Hemen Rezervasyon Yap\u0131n": {
+    "TR": "Hemen Rezervasyon Yap\u0131n",
+    "EN": "Book Now",
+    "ESP": "Reserva Ahora",
+    "FR": "R\u00E9servez Maintenant"
+  },
+  "Hayalinizdeki seyahat i\u00E7in formu doldurun, seyahat uzmanlar\u0131m\u0131z sizinle an\u0131nda ileti\u015Fime ge\u00E7sin.": {
+    "TR": "Hayalinizdeki seyahat i\u00E7in formu doldurun, seyahat uzmanlar\u0131m\u0131z sizinle an\u0131nda ileti\u015Fime ge\u00E7sin.",
+    "EN": "Fill out the form for your dream trip, and let our travel experts contact you instantly.",
+    "ESP": "Rellena el formulario para tu viaje so\u00F1ado y deja que nuestros expertos en viajes se pongan en contacto contigo al instante.",
+    "FR": "Remplissez le formulaire pour le voyage de vos r\u00EAves et laissez nos experts en voyage vous contacter instantan\u00E9ment."
+  },
+  "Rota Se\u00E7in": {
+    "TR": "Rota Se\u00E7in",
+    "EN": "Select Route",
+    "ESP": "Seleccionar Ruta",
+    "FR": "S\u00E9lectionner un Itin\u00E9raire"
+  },
+  "Nereye gitmek istersiniz?": {
+    "TR": "Nereye gitmek istersiniz?",
+    "EN": "Where do you want to go?",
+    "ESP": "\u00BFA d\u00F3nde quieres ir?",
+    "FR": "O\u00F9 souhaitez-vous aller ?"
+  },
+  "Ad\u0131n\u0131z Soyad\u0131n\u0131z": {
+    "TR": "Ad\u0131n\u0131z Soyad\u0131n\u0131z",
+    "EN": "Full Name",
+    "ESP": "Nombre y Apellido",
+    "FR": "Nom et Pr\u00E9nom"
+  },
+  "Telefon": {
+    "TR": "Telefon",
+    "EN": "Phone",
+    "ESP": "Tel\u00E9fono",
+    "FR": "T\u00E9l\u00E9phone"
+  },
+  "E-posta": {
+    "TR": "E-posta",
+    "EN": "E-mail",
+    "ESP": "Correo Electr\u00F3nico",
+    "FR": "E-mail"
+  },
+  "Gidi\u015F Tarihi": {
+    "TR": "Gidi\u015F Tarihi",
+    "EN": "Departure Date",
+    "ESP": "Fecha de Salida",
+    "FR": "Date de D\u00E9part"
+  },
+  "Ki\u015Fi Say\u0131s\u0131": {
+    "TR": "Ki\u015Fi Say\u0131s\u0131",
+    "EN": "Number of People",
+    "ESP": "N\u00FAmero de Personas",
+    "FR": "Nombre de Personnes"
+  },
+  "1 Ki\u015Fi": {
+    "TR": "1 Ki\u015Fi",
+    "EN": "1 Person",
+    "ESP": "1 Persona",
+    "FR": "1 Personne"
+  },
+  "2 Ki\u015Fi": {
+    "TR": "2 Ki\u015Fi",
+    "EN": "2 People",
+    "ESP": "2 Personas",
+    "FR": "2 Personnes"
+  },
+  "3 Ki\u015Fi": {
+    "TR": "3 Ki\u015Fi",
+    "EN": "3 People",
+    "ESP": "3 Personas",
+    "FR": "3 Personnes"
+  },
+  "4\u002B Ki\u015Fi": {
+    "TR": "4\u002B Ki\u015Fi",
+    "EN": "4\u002B People",
+    "ESP": "4\u002B Personas",
+    "FR": "4\u002B Personnes"
+  },
+  "Rezervasyon Talebini G\u00F6nder": {
+    "TR": "Rezervasyon Talebini G\u00F6nder",
+    "EN": "Send Reservation Request",
+    "ESP": "Enviar Solicitud de Reserva",
+    "FR": "Envoyer la Demande de R\u00E9servation"
+  },
+  "Yorumlar": {
+    "TR": "Yorumlar",
+    "EN": "Reviews",
+    "ESP": "Comentarios",
+    "FR": "Avis"
+  },
+  "Bizim Hakk\u0131m\u0131zda Ne Diyorlar?": {
+    "TR": "Bizim Hakk\u0131m\u0131zda Ne Diyorlar?",
+    "EN": "What Do They Say About Us?",
+    "ESP": "\u00BFQu\u00E9 Dicen de Nosotros?",
+    "FR": "Que Disent-Ils de Nous ?"
+  },
+  "Kapadokya turumuz ba\u015Ftan sona r\u00FCya gibiydi. Balon u\u00E7u\u015Fundan ma\u011Fara oteline kadar her ayr\u0131nt\u0131 son derece profesyonelce organize edilmi\u015Fti.": {
+    "TR": "Kapadokya turumuz ba\u015Ftan sona r\u00FCya gibiydi. Balon u\u00E7u\u015Fundan ma\u011Fara oteline kadar her ayr\u0131nt\u0131 son derece profesyonelce organize edilmi\u015Fti.",
+    "EN": "Our Cappadocia tour was like a dream from start to finish. Every detail, from the balloon flight to the cave hotel, was organized extremely professionally.",
+    "ESP": "Nuestro tour por Capadocia fue como un sue\u00F1o de principio a fin. Cada detalle, desde el paseo en globo hasta el hotel cueva, se organiz\u00F3 de manera muy profesional.",
+    "FR": "Notre voyage en Cappadoce a \u00E9t\u00E9 un v\u00E9ritable r\u00EAve du d\u00E9but \u00E0 la fin. Chaque d\u00E9tail, du vol en montgolfi\u00E8re \u00E0 l\u0027h\u00F4tel troglodyte, a \u00E9t\u00E9 organis\u00E9 de mani\u00E8re extr\u00EAmement professionnelle."
+  },
+  "Mimar / \u0130zmir": {
+    "TR": "Mimar / \u0130zmir",
+    "EN": "Architect / Izmir",
+    "ESP": "Arquitecto / Esmirna",
+    "FR": "Architecte / Izmir"
+  },
+  "Jadoo ekibiyle \u00E7\u0131kt\u0131\u011F\u0131m Bali seyahati beklentilerimin \u00E7ok \u00FCzerindeydi. Yerel k\u00FClt\u00FCrle i\u00E7 i\u00E7e, \u00E7ok huzurlu ve g\u00FCvenli bir tatil ge\u00E7irdim.": {
+    "TR": "Jadoo ekibiyle \u00E7\u0131kt\u0131\u011F\u0131m Bali seyahati beklentilerimin \u00E7ok \u00FCzerindeydi. Yerel k\u00FClt\u00FCrle i\u00E7 i\u00E7e, \u00E7ok huzurlu ve g\u00FCvenli bir tatil ge\u00E7irdim.",
+    "EN": "My trip to Bali with the Jadoo team exceeded my expectations. I had a very peaceful and safe holiday intertwined with local culture.",
+    "ESP": "Mi viaje a Bali con el equipo de Jadoo super\u00F3 con creces mis expectativas. Pas\u00E9 unas vacaciones muy tranquilas y seguras, entrelazadas con la cultura local.",
+    "FR": "Mon voyage \u00E0 Bali avec l\u0027\u00E9quipe Jadoo a largement d\u00E9pass\u00E9 mes attentes. J\u0027ai pass\u00E9 des vacances tr\u00E8s paisibles et s\u00FBres, en immersion dans la culture locale."
+  },
+  "Londra, \u0130ngiltere": {
+    "TR": "Londra, \u0130ngiltere",
+    "EN": "London, UK",
+    "ESP": "Londres, Reino Unido",
+    "FR": "Londres, Royaume-Uni"
+  },
+  "Hem i\u015F gezilerim hem de tatil ka\u00E7amaklar\u0131m i\u00E7in tek adresim Jadoo. H\u0131zl\u0131 rezervasyon sistemleri ve 7/24 kesintisiz destek ekipleri harika.": {
+    "TR": "Hem i\u015F gezilerim hem de tatil ka\u00E7amaklar\u0131m i\u00E7in tek adresim Jadoo. H\u0131zl\u0131 rezervasyon sistemleri ve 7/24 kesintisiz destek ekipleri harika.",
+    "EN": "Jadoo is my only address for both business trips and holiday getaways. Their fast booking systems and 24/7 uninterrupted support teams are great.",
+    "ESP": "Jadoo es mi \u00FAnica direcci\u00F3n tanto para viajes de negocios como para escapadas de vacaciones. Sus sistemas de reservas r\u00E1pidas y sus equipos de soporte ininterrumpidos 24/7 son fant\u00E1sticos.",
+    "FR": "Jadoo est ma seule adresse pour mes voyages d\u0027affaires comme pour mes escapades de vacances. Leurs syst\u00E8mes de r\u00E9servation rapide et leurs \u00E9quipes de support disponibles 24h/24 et 7j/7 sont formidables."
+  },
+  "Yaz\u0131l\u0131m Geli\u015Ftirici / Ankara": {
+    "TR": "Yaz\u0131l\u0131m Geli\u015Ftirici / Ankara",
+    "EN": "Software Developer / Ankara",
+    "ESP": "Desarrollador de Software / Ankara",
+    "FR": "D\u00E9veloppeur de Logiciels / Ankara"
+  },
+  "Ege k\u0131y\u0131lar\u0131nda ge\u00E7irdi\u011Fimiz aile tatili \u00E7ocuklar\u0131m\u0131z i\u00E7in de bizim i\u00E7in de \u00E7ok keyifliydi. Sunduklar\u0131 otel alternatifleri tam b\u00FCt\u00E7emize uygundu.": {
+    "TR": "Ege k\u0131y\u0131lar\u0131nda ge\u00E7irdi\u011Fimiz aile tatili \u00E7ocuklar\u0131m\u0131z i\u00E7in de bizim i\u00E7in de \u00E7ok keyifliydi. Sunduklar\u0131 otel alternatifleri tam b\u00FCt\u00E7emize uygundu.",
+    "EN": "The family holiday we spent on the Aegean coast was very enjoyable for both our children and us. The hotel alternatives they offered fit our budget perfectly.",
+    "ESP": "Las vacaciones familiares que pasamos en la costa del Egeo fueron muy agradables tanto para nuestros hijos como para nosotros. Las alternativas de hotel que ofrecieron se ajustaban exactamente a nuestro presupuesto.",
+    "FR": "Les vacances en famille que nous avons pass\u00E9es sur la c\u00F4te \u00E9g\u00E9enne ont \u00E9t\u00E9 tr\u00E8s agr\u00E9ables tant pour nos enfants que pour nous. Les alternatives d\u0027h\u00F4tels propos\u00E9es correspondaient parfaitement \u00E0 notre budget."
+  },
+  "Moskova, Rusya": {
+    "TR": "Moskova, Rusya",
+    "EN": "Moscow, Russia",
+    "ESP": "Mosc\u00FA, Rusia",
+    "FR": "Moscou, Russie"
+  },
+  "Jadoo ile ilgili geli\u015Fmelerden, en son haberlerden ve cazip tekliflerden haberdar olmak i\u00E7in abone olun": {
+    "TR": "Jadoo ile ilgili geli\u015Fmelerden, en son haberlerden ve cazip tekliflerden haberdar olmak i\u00E7in abone olun",
+    "EN": "Subscribe to stay informed about developments, latest news, and attractive offers regarding Jadoo",
+    "ESP": "Suscr\u00EDbete para estar informado sobre las novedades, las \u00FAltimas noticias y las ofertas atractivas relacionadas con Jadoo",
+    "FR": "Abonnez-vous pour rester inform\u00E9 des nouveaut\u00E9s, des derni\u00E8res actualit\u00E9s et des offres attractives concernant Jadoo"
+  },
+  "E-posta adresinizi girin": {
+    "TR": "E-posta adresinizi girin",
+    "EN": "Enter your email address",
+    "ESP": "Introduce tu direcci\u00F3n de correo electr\u00F3nico",
+    "FR": "Entrez votre adresse e-mail"
+  },
+  "Abone Ol": {
+    "TR": "Abone Ol",
+    "EN": "Subscribe",
+    "ESP": "Suscribirse",
+    "FR": "S\u0027abonner"
+  },
+  "Hizmetlerimiz": {
+    "TR": "Hizmetlerimiz",
+    "EN": "Our Services",
+    "ESP": "Nuestros Servicios",
+    "FR": "Nos Services"
+  },
+  "Lokasyonlar": {
+    "TR": "Lokasyonlar",
+    "EN": "Locations",
+    "ESP": "Ubicaciones",
+    "FR": "Emplacements"
+  },
+  "Rezervasyon": {
+    "TR": "Rezervasyon",
+    "EN": "Reservation",
+    "ESP": "Reserva",
+    "FR": "R\u00E9servation"
+  },
+  "Bize Yaz\u0131n": {
+    "TR": "Bize Yaz\u0131n",
+    "EN": "Write to Us",
+    "ESP": "Escr\u00EDbenos",
+    "FR": "\u00C9crivez-nous"
+  },
+  "Giri\u015F Yap": {
+    "TR": "Giri\u015F Yap",
+    "EN": "Sign In",
+    "ESP": "Iniciar Sesi\u00F3n",
+    "FR": "Se Connecter"
+  },
+  "Kay\u0131t Ol": {
+    "TR": "Kay\u0131t Ol",
+    "EN": "Sign Up",
+    "ESP": "Registrarse",
+    "FR": "S\u0027inscrire"
+  },
+  "Seyahatinizi dakikalar i\u00E7inde planlay\u0131n, seyahatinizin kontrol\u00FCn\u00FC tamamen elinizde tutun.": {
+    "TR": "Seyahatinizi dakikalar i\u00E7inde planlay\u0131n, seyahatinizin kontrol\u00FCn\u00FC tamamen elinizde tutun.",
+    "EN": "Plan your trip in minutes and keep complete control of your travel.",
+    "ESP": "Planifica tu viaje en minutos y mant\u00E9n el control total de tu viaje.",
+    "FR": "Planifiez votre voyage en quelques minutes et gardez le contr\u00F4le total de votre voyage."
+  },
+  "\u015Eirketimiz": {
+    "TR": "\u015Eirketimiz",
+    "EN": "Our Company",
+    "ESP": "Nuestra Empresa",
+    "FR": "Notre Entreprise"
+  },
+  "Hakk\u0131m\u0131zda": {
+    "TR": "Hakk\u0131m\u0131zda",
+    "EN": "About Us",
+    "ESP": "Sobre Nosotros",
+    "FR": "\u00C0 Propos"
+  },
+  "Kariyer": {
+    "TR": "Kariyer",
+    "EN": "Careers",
+    "ESP": "Empleo",
+    "FR": "Carri\u00E8res"
+  },
+  "Mobil": {
+    "TR": "Mobil",
+    "EN": "Mobile",
+    "ESP": "M\u00F3vil",
+    "FR": "Mobile"
+  },
+  "\u0130leti\u015Fim": {
+    "TR": "\u0130leti\u015Fim",
+    "EN": "Contact",
+    "ESP": "Contacto",
+    "FR": "Contact"
+  },
+  "Yard\u0131m/SSS": {
+    "TR": "Yard\u0131m/SSS",
+    "EN": "Help/FAQ",
+    "ESP": "Ayuda/FAQ",
+    "FR": "Aide/FAQ"
+  },
+  "Bas\u0131n": {
+    "TR": "Bas\u0131n",
+    "EN": "Press",
+    "ESP": "Prensa",
+    "FR": "Presse"
+  },
+  "Ortakl\u0131k": {
+    "TR": "Ortakl\u0131k",
+    "EN": "Partnership",
+    "ESP": "Asociaci\u00F3n",
+    "FR": "Partenariat"
+  },
+  "Daha Fazlas\u0131": {
+    "TR": "Daha Fazlas\u0131",
+    "EN": "More",
+    "ESP": "M\u00E1s",
+    "FR": "Plus"
+  },
+  "Bilet \u00DCcretleri": {
+    "TR": "Bilet \u00DCcretleri",
+    "EN": "Ticket Fares",
+    "ESP": "Tarifas de Billetes",
+    "FR": "Tarifs des Billets"
+  },
+  "Havayollar\u0131": {
+    "TR": "Havayollar\u0131",
+    "EN": "Airlines",
+    "ESP": "Aerol\u00EDneas",
+    "FR": "Compagnies a\u00E9riennes"
+  },
+  "D\u00FC\u015F\u00FCk \u00DCcret \u0130pu\u00E7lar\u0131": {
+    "TR": "D\u00FC\u015F\u00FCk \u00DCcret \u0130pu\u00E7lar\u0131",
+    "EN": "Low Fare Tips",
+    "ESP": "Consejos de Tarifas Bajas",
+    "FR": "Astuces Petits Prix"
+  },
+  "Uygulamam\u0131z\u0131 Ke\u015Ffedin": {
+    "TR": "Uygulamam\u0131z\u0131 Ke\u015Ffedin",
+    "EN": "Discover Our App",
+    "ESP": "Descubre Nuestra App",
+    "FR": "D\u00E9couvrez Notre Application"
+  },
+  "T\u00FCm haklar\u0131 sakl\u0131d\u0131r jadoo.co": {
+    "TR": "T\u00FCm haklar\u0131 sakl\u0131d\u0131r jadoo.co",
+    "EN": "All rights reserved jadoo.co",
+    "ESP": "Todos los derechos reservados jadoo.co",
+    "FR": "Tous droits r\u00E9serv\u00E9s jadoo.co"
+  },
+  "B\u00FCy\u00FCleyici g\u00FCn bat\u0131mlar\u0131nda ve do\u011Fal ya\u015Fam parklar\u0131nda, profesyonel e\u011Fitmenler e\u015Fli\u011Finde viz\u00F6rden d\u00FCnyay\u0131 yakalama turlar\u0131.": {
+    "TR": "B\u00FCy\u00FCleyici g\u00FCn bat\u0131mlar\u0131nda ve do\u011Fal ya\u015Fam parklar\u0131nda, profesyonel e\u011Fitmenler e\u015Fli\u011Finde viz\u00F6rden d\u00FCnyay\u0131 yakalama turlar\u0131.",
+    "EN": "Tours to capture the world through the viewfinder during mesmerizing sunsets and in wildlife parks, accompanied by professional instructors.",
+    "ESP": "Excursiones para capturar el mundo a trav\u00E9s del visor durante puestas de sol fascinantes y en parques naturales, acompa\u00F1ados por instructores profesionales.",
+    "FR": "Des circuits pour capturer le monde \u00E0 travers le viseur lors de couchers de soleil fascinants et dans des parcs animaliers, accompagn\u00E9s par des instructeurs professionnels."
+  },
+  "Gidi\u015F-d\u00F6n\u00FC\u015F tarihlerinizi ve ki\u015Fi say\u0131s\u0131n\u0131 se\u00E7erek size en uygun u\u00E7u\u015F ve otel planlamas\u0131n\u0131 olu\u015Fturun.": {
+    "TR": "Gidi\u015F-d\u00F6n\u00FC\u015F tarihlerinizi ve ki\u015Fi say\u0131s\u0131n\u0131 se\u00E7erek size en uygun u\u00E7u\u015F ve otel planlamas\u0131n\u0131 olu\u015Fturun.",
+    "EN": "Create the most suitable flight and hotel plan for you by selecting your round-trip dates and the number of people.",
+    "ESP": "Cree el plan de vuelo y hotel m\u00E1s adecuado para usted seleccionando sus fechas de ida y vuelta y el n\u00FAmero de personas.",
+    "FR": "Cr\u00E9ez le plan de vol et d\u0027h\u00F4tel qui vous convient le mieux en s\u00E9lectionnant vos dates de voyage aller-retour et le nombre de personnes."
+  }
+}

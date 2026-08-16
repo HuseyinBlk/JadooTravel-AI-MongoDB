@@ -1,85 +1,84 @@
+@model List<JadooTravel.Dtos.TestimonialDtos.ResultTestimonialDto>
+@inject JadooTravel.Services.LanguageServices.ILanguageService Lang
+
 <section id="testimonial">
 
   <div class="container">
     <div class="row">
       <div class="col-lg-5">
         <div class="mb-8 text-start">
-          <h5 class="text-secondary">Yorumlar</h5>
-          <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">Bizim Hakkımızda Ne Diyorlar?</h3>
+          
+          <h5 class="text-secondary">@Lang.T("Yorumlar")</h5>
+          <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">@Lang.T("Bizim Hakkımızda Ne Diyorlar?")</h3>
         </div>
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-6">
         <div class="pe-7 ps-5 ps-lg-0">
-          <div class="carousel slide carousel-fade position-static" id="testimonialIndicator" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button class="active" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="0"
-                      aria-current="true" aria-label="Testimonial 0"></button>
-              <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="1"
-                      aria-current="true" aria-label="Testimonial 1"></button>
-              <button class="false" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="2"
-                      aria-current="true" aria-label="Testimonial 2"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item position-relative active">
-                <div class="card shadow" style="border-radius:10px;">
-                  <div class="position-absolute start-0 top-0 translate-middle"><img class="rounded-circle fit-cover"
-                                                                                     src="~/public/assets/img/testimonial/author.png"
-                                                                                     height="65" width="65" alt=""/>
-                  </div>
-                  <div class="card-body p-4">
-                    <p class="fw-medium mb-4">&quot;Muhteşem bir seyahat deneyimiydi! Ulaşımdan konaklamaya kadar her şey son derece profesyonelce planlanmıştı. Teşekkürler Jadoo!&quot;</p>
-                    <h5 class="text-secondary">Mike Taylor</h5>
-                    <p class="fw-medium fs--1 mb-0">Lahor, Pakistan</p>
-                  </div>
+          
+          @if (Model != null && Model.Any())
+          {
+              <div class="carousel slide carousel-fade position-static" id="testimonialIndicator" data-bs-ride="carousel">
+                
+                <div class="carousel-indicators">
+                  @for (int i = 0; i < Model.Count; i++)
+                  {
+                      <button class="@(i == 0 ? "active" : "")" type="button" data-bs-target="#testimonialIndicator" data-bs-slide-to="@i"
+                              aria-current="@(i == 0 ? "true" : "false")" aria-label="Testimonial @i"></button>
+                  }
                 </div>
-                <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100"
-                     style="border-radius:10px;transform:translate(25px, 25px)"></div>
-              </div>
-              <div class="carousel-item position-relative ">
-                <div class="card shadow" style="border-radius:10px;">
-                  <div class="position-absolute start-0 top-0 translate-middle"><img class="rounded-circle fit-cover"
-                                                                                     src="~/public/assets/img/testimonial/author2.png"
-                                                                                     height="65" width="65" alt=""/>
-                  </div>
-                  <div class="card-body p-4">
-                    <p class="fw-medium mb-4">&quot;Jadoo, seyahat planlaması söz konusu olduğunda dünyadaki en güvenilir acentelerden biri. Bütün detayları düşünüyorlar.&quot;</p>
-                    <h5 class="text-secondary">Thomas Wagon</h5>
-                    <p class="fw-medium fs--1 mb-0">Red Button CEO'su</p>
-                  </div>
+                
+                <div class="carousel-inner">
+                  @for (int i = 0; i < Model.Count; i++)
+                  {
+                      var item = Model[i];
+                      <div class="carousel-item position-relative @(i == 0 ? "active" : "")">
+                        <div class="card shadow bg-white" style="border-radius:10px;">
+                          <div class="position-absolute start-0 top-0 translate-middle">
+                            <img class="rounded-circle border border-2 border-white shadow-sm"
+                                 src="@(string.IsNullOrEmpty(item.PhotoUrl) ? "/Spike-Admin/src/assets/images/profile/user-1.jpg" : item.PhotoUrl)"
+                                 height="65" width="65" alt="@item.NameSurname" style="object-fit: cover;" />
+                          </div>
+                          
+                          <div class="card-body p-4 pt-5">
+                            
+                            <p class="fw-medium mb-4">&quot;@Lang.T(item.Description)&quot;</p>
+                            <h5 class="text-secondary">@item.NameSurname</h5>
+                            <p class="fw-semibold fs--1 mb-0 text-muted">@Lang.T(item.Title)</p>
+                          </div>
+                        </div>
+                        
+                        <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100"
+                             style="border-radius:10px; transform:translate(25px, 25px); background-color: #f8f9fa; border: 1px solid #e9ecef; pointer-events: none;"></div>
+                      </div>
+                  }
                 </div>
-                <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100"
-                     style="border-radius:10px;transform:translate(25px, 25px)"></div>
-              </div>
-              <div class="carousel-item position-relative ">
-                <div class="card shadow" style="border-radius:10px;">
-                  <div class="position-absolute start-0 top-0 translate-middle"><img class="rounded-circle fit-cover"
-                                                                                     src="~/public/assets/img/testimonial/author3.png"
-                                                                                     height="65" width="65" alt=""/>
-                  </div>
-                  <div class="card-body p-4">
-                    <p class="fw-medium mb-4">&quot;Kendi isteklerime göre tamamen özelleştirilmiş bir tura katıldım. Hayatımın en unutulmaz tatiliydi, herkese tavsiye ederim.&quot;</p>
-                    <h5 class="text-secondary">Kelly Willium</h5>
-                    <p class="fw-medium fs--1 mb-0">Khulna, Bangladeş</p>
-                  </div>
+                
+                <div class="carousel-navigation d-flex flex-column flex-between-center position-absolute end-0 top-lg-50 bottom-0 translate-middle-y z-index-1 me-3 me-lg-0"
+                     style="height:60px;width:20px;">
+                  <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialIndicator"
+                          data-bs-slide="prev"><img src="/public/assets/img/icons/up.svg" width="16" alt="icon"/></button>
+                  <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialIndicator"
+                          data-bs-slide="next"><img src="/public/assets/img/icons/down.svg" width="16" alt="icon"/>
+                  </button>
                 </div>
-                <div class="card shadow-sm position-absolute top-0 z-index--1 mb-3 w-100 h-100"
-                     style="border-radius:10px;transform:translate(25px, 25px)"></div>
+                
               </div>
-            </div>
-            <div
-              class="carousel-navigation d-flex flex-column flex-between-center position-absolute end-0 top-lg-50 bottom-0 translate-middle-y z-index-1 me-3 me-lg-0"
-              style="height:60px;width:20px;">
-              <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialIndicator"
-                      data-bs-slide="prev"><img src="~/public/assets/img/icons/up.svg" width="16" alt="icon"/></button>
-              <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialIndicator"
-                      data-bs-slide="next"><img src="~/public/assets/img/icons/down.svg" width="16" alt="icon"/>
-              </button>
-            </div>
-          </div>
+          }
+          else
+          {
+              <div class="card shadow-sm border border-2 border-dashed bg-light text-center" style="border-radius:10px;">
+                <div class="card-body p-5">
+                  <i class="ti ti-messages fs-9 text-muted mb-3 d-block"></i>
+                  <span class="text-muted fw-semibold d-block">@Lang.T("Henüz hiç müşteri yorumu bulunmuyor.")</span>
+                  <span class="text-muted fs-2">@Lang.T("Admin panelinden yeni yorumlar ekleyebilirsiniz.")</span>
+                </div>
+              </div>
+          }
+          
         </div>
       </div>
     </div>
-  </div><!-- end of .container-->
+  </div>
 
 </section>

@@ -1,0 +1,124 @@
+@model List<JadooTravel.Dtos.TripPlanDtos.ResultTripPlanDto>
+
+@{
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row">
+  <div class="col-lg-12 d-flex align-items-stretch">
+    <div class="card w-100 shadow-sm">
+      <div class="card-body p-4">
+        
+        
+        <div class="d-flex mb-4 justify-content-between align-items-center">
+          <div>
+            <h5 class="mb-1 fw-bold d-flex align-items-center gap-2">
+              <iconify-icon icon="solar:route-bold-duotone" class="fs-7 text-primary"></iconify-icon>
+              Seyahat Adımları (Trip Plan) Yönetimi (@(Model?.Count ?? 0) / 3)
+            </h5>
+            <p class="text-muted mb-0 fs-2">Ana sayfadaki "3 Kolay Adımda Planlayın" bölümünü buradan yönetebilirsiniz.</p>
+          </div>
+
+          
+          @if (Model == null || Model.Count < 3)
+          {
+              <a asp-controller="TripPlan" asp-action="CreateTripPlan" class="btn btn-primary d-flex align-items-center gap-2">
+                <i class="ti ti-plus fs-5"></i>
+                Yeni Adım Ekle
+              </a>
+          }
+        </div>
+
+        
+        @if (Model != null && Model.Count >= 3)
+        {
+            <div class="alert alert-warning border-0 d-flex align-items-center gap-3 mb-4 rounded-3" role="alert">
+              <iconify-icon icon="solar:info-circle-bold-duotone" class="fs-6 text-warning"></iconify-icon>
+              <div>
+                <strong>Maksimum Adım Sınırı:</strong> Ana sayfada seyahat planlaması için en fazla 3 adım sergilenebilir. Yeni bir adım eklemek için mevcut adımlardan birini silmeniz gerekmektedir.
+              </div>
+            </div>
+        }
+
+        
+        <div class="table-responsive" data-simplebar>
+          <table class="table table-hover align-middle text-nowrap mb-0">
+            <thead class="text-dark fs-3 bg-light">
+              <tr>
+                <th scope="col" class="border-bottom-0" style="width: 10%">İkon / Görsel</th>
+                <th scope="col" class="border-bottom-0">Adım Başlığı</th>
+                <th scope="col" class="border-bottom-0">Açıklama</th>
+                <th scope="col" class="border-bottom-0 text-end" style="width: 20%">İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              @if (Model != null && Model.Any())
+              {
+                  foreach (var item in Model)
+                  {
+                      <tr>
+                        
+                        <td>
+                          <div class="bg-light-primary text-primary rounded-3 d-flex align-items-center justify-content-center p-2" style="width: 45px; height: 45px;">
+                            @if (!string.IsNullOrEmpty(item.DescriptionIconUrl) && (item.DescriptionIconUrl.StartsWith("http") || item.DescriptionIconUrl.Contains("/")))
+                            {
+                                <img src="@Url.Content(item.DescriptionIconUrl)" alt="" width="24" height="24" class="object-fit-contain" />
+                            }
+                            else
+                            {
+                                <i class="@(string.IsNullOrEmpty(item.DescriptionIconUrl) ? "ti ti-arrow-right" : item.DescriptionIconUrl) fs-6"></i>
+                            }
+                          </div>
+                        </td>
+                        
+                        
+                        <td>
+                          <span class="fw-semibold text-dark fs-3">@item.Title</span>
+                        </td>
+
+                        
+                        <td>
+                          <p class="mb-0 fw-normal text-muted text-truncate" style="max-width: 400px;">
+                            @item.Description
+                          </p>
+                        </td>
+                        
+                        
+                        <td class="text-end">
+                          <div class="d-flex justify-content-end gap-2">
+                            <a asp-controller="TripPlan" 
+                               asp-action="UpdateTripPlan" 
+                               asp-route-id="@item.TripPlanId" 
+                               class="btn btn-sm btn-outline-warning d-flex align-items-center gap-1">
+                              <i class="ti ti-edit fs-4"></i> Düzenle
+                            </a>
+                            <a asp-controller="TripPlan" 
+                               asp-action="DeleteTripPlan" 
+                               asp-route-id="@item.TripPlanId" 
+                               class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
+                               onclick="return confirm('@item.Title adımını silmek istediğinize emin misiniz?')">
+                              <i class="ti ti-trash fs-4"></i> Sil
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                  }
+              }
+              else
+              {
+                  <tr>
+                    <td colspan="4" class="text-center py-5 text-muted fs-3">
+                      <iconify-icon icon="solar:route-bold-duotone" class="fs-9 text-muted mb-2 d-block"></iconify-icon>
+                      Kayıtlı seyahat adımı bulunamadı. Yeni bir adım ekleyerek başlayın.
+                    </td>
+                  </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+</div>

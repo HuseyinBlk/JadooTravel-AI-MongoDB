@@ -8,6 +8,6 @@ public interface IFeatureService
     Task UpdateFeatureAsync(UpdateFeatureDto featureDto);
     Task CreateFeatureAsync(CreateFeatureDto featureDto);
     Task DeleteFeatureAsync(string id);
-    Task GetFeatureByIdAsync(string id);
+    Task<GetFeatureByIdDto> GetFeatureByIdAsync(string id);
     
 }

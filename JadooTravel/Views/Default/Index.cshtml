@@ -1,43 +1,18 @@
-@model dynamic
-
 @{
-    Layout = null;
+    Layout = "/Views/DefaultLayout/Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+@await Component.InvokeAsync("_DefaultFeatureComponentPartial")
 
-  <head>
-    @await Component.InvokeAsync("_DefaultHeadComponentPartial")
+@await Component.InvokeAsync("_DefaultServiceComponentPartial")
 
-  </head>
+@await Component.InvokeAsync("_DefaultDestinationComponentPartial")
 
+@await Component.InvokeAsync("_DefaultBookingComponentPartial")
 
-  <body>
-  
-    <main class="main" id="top">
-      
-      @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultServiceComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultDestinationComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultBookingComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultPartnerComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultSubscribeComponentPartial")
-      
-      @await Component.InvokeAsync("_DefaultFooterComponentPartial")
-      
-    </main>
-  
-    @await Component.InvokeAsync("_DefaultScriptComponentPartial")
-  </body>
+@await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
 
-</html> 
+@await Component.InvokeAsync("_DefaultPartnerComponentPartial")
+
+@await Component.InvokeAsync("_DefaultSubscribeComponentPartial")
+      

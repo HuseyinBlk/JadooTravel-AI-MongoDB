@@ -1,0 +1,125 @@
+@model List<JadooTravel.Dtos.TestimonialDtos.ResultTestimonialDto>
+
+@{
+    ViewData["Title"] = "Müşteri Yorumları";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        
+        
+        <div class="d-md-flex align-items-center justify-content-between mb-9">
+          <div>
+            <h4 class="card-title">Müşteri Yorumları</h4>
+            <p class="card-subtitle mb-0">Müşterilerinizin seyahat deneyimleri hakkındaki değerlendirmelerini buradan yönetebilirsiniz.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <a href="/Admin/Testimonial/Create" class="btn btn-primary d-flex align-items-center gap-2">
+              <i class="ti ti-plus fs-5"></i> Yeni Yorum Ekle
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap mb-0">
+            <thead class="text-dark fs-3">
+              <tr>
+                <th class="border-bottom-0"><h6 class="fw-semibold mb-0">#</h6></th>
+                <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Müşteri</h6></th>
+                <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Yorum/Geri Bildirim</h6></th>
+                <th class="border-bottom-0 text-end"><h6 class="fw-semibold mb-0">İşlemler</h6></th>
+              </tr>
+            </thead>
+            <tbody>
+              @if (Model != null && Model.Any())
+              {
+                  foreach (var item in Model)
+                  {
+                      count++;
+                      <tr>
+                        
+                        <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">@count</h6>
+                        </td>
+                        
+                        
+                        <td class="border-bottom-0">
+                          <div class="d-flex align-items-center gap-3">
+                            <img src="@(string.IsNullOrEmpty(item.PhotoUrl) ? "/Spike-Admin/src/assets/images/profile/user-1.jpg" : item.PhotoUrl)" 
+                                 alt="@item.NameSurname" 
+                                 class="rounded-circle border border-2 shadow-sm" 
+                                 width="45" 
+                                 height="45" 
+                                 style="object-fit: cover;" />
+                            <div>
+                              <h6 class="fw-semibold mb-0">@item.NameSurname</h6>
+                              <span class="text-muted fs-2">@item.Title</span>
+                            </div>
+                          </div>
+                        </td>
+
+                        
+                        <td class="border-bottom-0">
+                          <p class="text-dark fw-normal mb-0" style="max-width: 400px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.5;">
+                            @item.Description
+                          </p>
+                        </td>
+
+                        
+                        <td class="border-bottom-0 text-end">
+                          <div class="d-flex align-items-center justify-content-end gap-2">
+                            <a href="/Admin/Testimonial/Update/@item.TestimonialId" class="btn btn-sm btn-light-warning text-warning d-flex align-items-center gap-1 px-3 py-2">
+                              <i class="ti ti-edit fs-4"></i> Düzenle
+                            </a>
+                            <button type="button" class="btn btn-sm btn-light-danger text-danger d-flex align-items-center gap-1 px-3 py-2" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal-@item.TestimonialId">
+                              <i class="ti ti-trash fs-4"></i> Sil
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+
+                      
+                      <div class="modal fade" id="deleteModal-@item.TestimonialId" tabindex="-1" aria-labelledby="deleteModalLabel-@item.TestimonialId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header border-bottom-0 pb-0">
+                              <h5 class="modal-title fw-bold text-danger" id="deleteModalLabel-@item.TestimonialId">Yorumu Sil</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body py-3">
+                              <p class="mb-0"><strong>@item.NameSurname</strong> isimli müşterinin yaptığı yorumu kalıcı olarak silmek istediğinize emin misiniz?</p>
+                            </div>
+                            <div class="modal-footer border-top-0 pt-0">
+                              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Vazgeç</button>
+                              <a href="/Admin/Testimonial/Delete/@item.TestimonialId" class="btn btn-danger">Evet, Sil</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  }
+              }
+              else
+              {
+                  <tr>
+                    <td colspan="4" class="text-center py-5 border-bottom-0">
+                      <div class="text-muted">
+                        <i class="ti ti-info-circle fs-8 mb-2 d-block text-warning"></i>
+                        Henüz hiç müşteri yorumu eklenmemiş.
+                      </div>
+                    </td>
+                  </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

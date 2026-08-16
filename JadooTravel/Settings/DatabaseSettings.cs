@@ -9,4 +9,10 @@ public class DatabaseSettings : IDatabaseSettings
     public string DestinationCollectionName { get; set; }
     public string FeatureCollectionName { get; set; }
     public string TripPlanCollectionName { get; set; }
+    public string TestimonialCollectionName { get; set; }
+    public string PartnerCollectionName { get; set; }
+    public string SubscribeCollectionName { get; set; }
+    public string BookingCollectionName { get; set; }
+
+    
 }

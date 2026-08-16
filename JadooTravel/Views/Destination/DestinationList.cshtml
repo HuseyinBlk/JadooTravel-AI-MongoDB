@@ -1,32 +1,126 @@
 @model List<ResultDestinationDto>
 
 @{
-    Layout = null;
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
 }
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
 
-<div class="container">
-    <br/><br/>
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Tur Şehir Ülke</th>
-            <th>Tur Fiyatı<th>
-            <th>Tur Kapasitesi</th>
-            <th>Sil</th>
-            <th>Güncelle</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.DestinationId</td>
-                <td>@item.City @item.Country</td>
-                <td>@item.City @item.Price</td>
-                <td>@item.City @item.Capacity</td>
-                <td><a href="/Destination/DeleteDestination/@item.DestinationId" class="btn btn-danger">Sil</a></td>
-                <td><a href="/Destination/UpdateDestination/@item.DestinationId" class="btn btn-success">Güncelle</a></td>
-            </tr>
-        }
-    </table>
-    <a href="/Category/CreateCategory/" class="btn btn-info">Yeni Kategori Girişi</a>
+<div class="row">
+  <div class="col-lg-12 d-flex align-items-stretch">
+    <div class="card w-100 shadow-sm">
+      <div class="card-body p-4">
+        
+        
+        <div class="d-flex mb-4 justify-content-between align-items-center">
+          <div>
+            <h5 class="mb-1 fw-bold d-flex align-items-center gap-2">
+              <iconify-icon icon="solar:map-point-wave-bold-duotone" class="fs-7 text-primary"></iconify-icon>
+              Tur Rotaları Yönetimi
+            </h5>
+            <p class="text-muted mb-0 fs-2">Web sitenizde sergilenen tüm tur rotalarını, fiyatlarını ve kapasitelerini buradan yönetin.</p>
+          </div>
+          
+          <a asp-controller="Destination" asp-action="CreateDestination" class="btn btn-primary d-flex align-items-center gap-2">
+            <i class="ti ti-plus fs-5"></i>
+            Yeni Tur Rotası Ekle
+          </a>
+        </div>
+
+        
+        <div class="table-responsive" data-simplebar>
+          <table class="table table-hover align-middle text-nowrap mb-0">
+            <thead class="text-dark fs-3 bg-light">
+              <tr>
+                <th scope="col" class="border-bottom-0" style="width: 8%">Görsel</th>
+                <th scope="col" class="border-bottom-0">Destinasyon (Şehir / Ülke)</th>
+                <th scope="col" class="border-bottom-0">Fiyat</th>
+                <th scope="col" class="border-bottom-0">Süre</th>
+                <th scope="col" class="border-bottom-0">Kapasite</th>
+                <th scope="col" class="border-bottom-0 text-end" style="width: 20%">İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              @if (Model != null && Model.Any())
+              {
+                  foreach (var item in Model)
+                  {
+                      <tr>
+                        
+                        <td>
+                          @if (!string.IsNullOrEmpty(item.ImageUrl))
+                          {
+                              <img src="@item.ImageUrl" alt="@item.City" class="rounded-3 object-fit-cover border" style="width: 60px; height: 42px;" />
+                          }
+                          else
+                          {
+                              <div class="bg-light rounded-3 d-flex align-items-center justify-content-center border" style="width: 60px; height: 42px;">
+                                <i class="ti ti-photo text-muted"></i>
+                              </div>
+                          }
+                        </td>
+                        
+                        
+                        <td>
+                          <div>
+                            <span class="fw-semibold text-dark fs-3 d-block">@item.City</span>
+                            <span class="text-muted fs-2">@item.Country</span>
+                          </div>
+                        </td>
+
+                        
+                        <td>
+                          <span class="fw-bold text-primary fs-3">@item.Price.ToString("F2") $</span>
+                        </td>
+
+                        
+                        <td>
+                          <span class="badge bg-light-info text-info px-3 py-1 fs-2 fw-semibold">
+                            <i class="ti ti-clock me-1"></i> @item.DayNight
+                          </span>
+                        </td>
+
+                        
+                        <td>
+                          <span class="text-dark fw-normal fs-3">
+                            <i class="ti ti-users me-1 text-muted"></i> @item.Capacity Kişi
+                          </span>
+                        </td>
+                        
+                        
+                        <td class="text-end">
+                          <div class="d-flex justify-content-end gap-2">
+                            <a asp-controller="Destination" 
+                               asp-action="UpdateDestination" 
+                               asp-route-id="@item.DestinationId" 
+                               class="btn btn-sm btn-outline-warning d-flex align-items-center gap-1">
+                              <i class="ti ti-edit fs-4"></i> Düzenle
+                            </a>
+                            <a asp-controller="Destination" 
+                               asp-action="DeleteDestination" 
+                               asp-route-id="@item.DestinationId" 
+                               class="btn btn-sm btn-outline-danger d-flex align-items-center gap-1"
+                               onclick="return confirm('@item.City - @item.Country tur rotasını silmek istediğinize emin misiniz?')">
+                              <i class="ti ti-trash fs-4"></i> Sil
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                  }
+              }
+              else
+              {
+                  <tr>
+                    <td colspan="6" class="text-center py-5 text-muted fs-3">
+                      <iconify-icon icon="solar:map-point-remove-bold-duotone" class="fs-9 text-muted mb-2 d-block"></iconify-icon>
+                      Sisteme kayıtlı herhangi bir seyahat rotası bulunamadı.
+                    </td>
+                  </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
 </div>

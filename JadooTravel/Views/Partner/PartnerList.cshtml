@@ -1,0 +1,119 @@
+@model List<JadooTravel.Dtos.PartnerDtos.ResultPartnerDto>
+
+@{
+    ViewData["Title"] = "Sponsor Markalar";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+    int count = 0;
+}
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        
+        
+        <div class="d-md-flex align-items-center justify-content-between mb-9">
+          <div>
+            <h4 class="card-title">Sponsor Markalar</h4>
+            <p class="card-subtitle mb-0">Ana sayfa en altında yer alan sponsor ve ortaklık logolarını buradan yönetebilirsiniz.</p>
+          </div>
+          <div class="mt-3 mt-md-0">
+            <a href="/Admin/Partner/Create" class="btn btn-primary d-flex align-items-center gap-2">
+              <i class="ti ti-plus fs-5"></i> Yeni Marka Ekle
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="table-responsive">
+          <table class="table align-middle text-nowrap mb-0">
+            <thead class="text-dark fs-3">
+              <tr>
+                <th class="border-bottom-0" style="width: 80px;"><h6 class="fw-semibold mb-0">#</h6></th>
+                <th class="border-bottom-0" style="width: 200px;"><h6 class="fw-semibold mb-0">Logo Önizleme</h6></th>
+                <th class="border-bottom-0"><h6 class="fw-semibold mb-0">Logo Resim Adresi (URL)</h6></th>
+                <th class="border-bottom-0 text-end" style="width: 200px;"><h6 class="fw-semibold mb-0">İşlemler</h6></th>
+              </tr>
+            </thead>
+            <tbody>
+              @if (Model != null && Model.Any())
+              {
+                  foreach (var item in Model)
+                  {
+                      count++;
+                      <tr>
+                        
+                        <td class="border-bottom-0">
+                          <h6 class="fw-semibold mb-0">@count</h6>
+                        </td>
+                        
+                        
+                        <td class="border-bottom-0">
+                          <div class="p-2 bg-light border rounded-2 d-flex align-items-center justify-content-center" 
+                               style="width: 140px; height: 60px;">
+                            <img src="@item.PhotoUrl" alt="Partner Logo" 
+                                 style="max-width: 100%; max-height: 100%; object-fit: contain;" />
+                          </div>
+                        </td>
+
+                        
+                        <td class="border-bottom-0">
+                          <span class="text-muted fs-3 text-wrap" style="word-break: break-all;">@item.PhotoUrl</span>
+                        </td>
+
+                        
+                        <td class="border-bottom-0 text-end">
+                          <div class="d-flex align-items-center justify-content-end gap-2">
+                            <a href="/Admin/Partner/Update/@item.PartnerId" class="btn btn-sm btn-light-warning text-warning d-flex align-items-center gap-1 px-3 py-2">
+                              <i class="ti ti-edit fs-4"></i> Düzenle
+                            </a>
+                            <button type="button" class="btn btn-sm btn-light-danger text-danger d-flex align-items-center gap-1 px-3 py-2" 
+                                    data-bs-toggle="modal" data-bs-target="#deleteModal-@item.PartnerId">
+                              <i class="ti ti-trash fs-4"></i> Sil
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+
+                      
+                      <div class="modal fade" id="deleteModal-@item.PartnerId" tabindex="-1" aria-labelledby="deleteModalLabel-@item.PartnerId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header border-bottom-0 pb-0">
+                              <h5 class="modal-title fw-bold text-danger" id="deleteModalLabel-@item.PartnerId">Sponsor Markayı Sil</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body py-3">
+                              <p class="mb-0">Bu sponsor markaya ait logoyu sistemden kalıcı olarak silmek istediğinize emin misiniz?</p>
+                              <div class="mt-3 p-3 bg-light rounded text-center border">
+                                <img src="@item.PhotoUrl" style="max-height: 50px; object-fit: contain;" />
+                              </div>
+                            </div>
+                            <div class="modal-footer border-top-0 pt-0">
+                              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Vazgeç</button>
+                              <a href="/Admin/Partner/Delete/@item.PartnerId" class="btn btn-danger">Evet, Sil</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  }
+              }
+              else
+              {
+                  <tr>
+                    <td colspan="4" class="text-center py-5 border-bottom-0">
+                      <div class="text-muted">
+                        <i class="ti ti-info-circle fs-8 mb-2 d-block text-warning"></i>
+                        Henüz hiç sponsor marka eklenmemiş.
+                      </div>
+                    </td>
+                  </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

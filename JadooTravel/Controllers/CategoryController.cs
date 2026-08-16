@@ -1,48 +1,52 @@
 using JadooTravel.Dtos.CategoryDtos;
 using JadooTravel.Services.CategoryServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JadooTravel.Controllers;
 
-public class CategoryController(ICategoryService _categoryService) : Controller
+[Authorize]
+[Route("/Admin/Category")]
+public class CategoryController(ICategoryService categoryService) : Controller
 {
-    // GET
+    [HttpGet("")]
     public async Task<IActionResult> CategoryList()
     {
-        var values = await _categoryService.GetAllCategoriesAsync();
+        var values = await categoryService.GetAllCategoriesAsync();
         return View(values);
     }
 
-    [HttpGet]
+    [HttpGet("Create")]
     public IActionResult CreateCategory()
     {
         return View();
     }
 
-    [HttpPost]
+    [HttpPost("Create")]
     public async Task<IActionResult> CreateCategory(CreateCategoryDto createCategoryDto)
     {
-        await _categoryService.CreateCategoryAsync(createCategoryDto);
+        await categoryService.CreateCategoryAsync(createCategoryDto);
         return RedirectToAction("CategoryList");
     }
 
-    [HttpGet]
+    [HttpGet("Update/{id}")]
     public async Task<IActionResult> UpdateCategory(string id)
     {
-        var value = await _categoryService.GetCategoryByIdAsync(id);
+        var value = await categoryService.GetCategoryByIdAsync(id);
         return View(value);
     }
 
-    [HttpPost]
+    [HttpPost("Update/{id}")]
     public async Task<IActionResult> UpdateCategory(UpdateCategoryDto updateCategoryDto)
     {
-        await _categoryService.UpdateCategoryAsync(updateCategoryDto);
+        await categoryService.UpdateCategoryAsync(updateCategoryDto);
         return RedirectToAction("CategoryList");
     }
 
+    [HttpGet("Delete/{id}")]
     public async Task<IActionResult> DeleteCategory(string id)
     {
-        await _categoryService.DeleteCategoryAsync(id);
+        await categoryService.DeleteCategoryAsync(id);
         return RedirectToAction("CategoryList");
     }
 }

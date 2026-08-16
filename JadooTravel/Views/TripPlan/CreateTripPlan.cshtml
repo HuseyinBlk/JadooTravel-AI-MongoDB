@@ -1,0 +1,62 @@
+@model CreateTripPlanDto
+
+@{
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        
+        <h5 class="card-title fw-bold mb-4 d-flex align-items-center gap-2">
+          <iconify-icon icon="solar:route-bold-duotone" class="fs-7 text-primary"></iconify-icon>
+          Yeni Seyahat Adımı Ekle
+        </h5>
+        <p class="text-muted mb-4 fs-2">Ana sayfa planlama adımlarına eklemek üzere yeni bir başlık ve ikon tanımlayın.</p>
+
+        <form asp-controller="TripPlan" asp-action="CreateTripPlan" method="post">
+          <div class="row">
+            
+            
+            <div class="col-12 mb-3">
+              <label for="Title" class="form-label fw-semibold">Adım Başlığı</label>
+              <input type="text" class="form-control" asp-for="Title" placeholder="Örn: Rotanızı Seçin" required />
+              <span class="text-danger fs-2" asp-validation-for="Title"></span>
+            </div>
+
+            
+            <div class="col-12 mb-3">
+              <label for="DescriptionIconUrl" class="form-label fw-semibold">İkon URL veya Class Adı</label>
+              <div class="input-group">
+                <span class="input-group-text bg-light text-muted border-end-0">
+                  <i class="ti ti-photo"></i>
+                </span>
+                <input type="text" class="form-control border-start-0" asp-for="DescriptionIconUrl" placeholder="Görsel URL veya ti ti-plane gibi ikon class'ı" required />
+              </div>
+              <span class="text-danger fs-2" asp-validation-for="DescriptionIconUrl"></span>
+            </div>
+
+            
+            <div class="col-12 mb-4">
+              <label for="Description" class="form-label fw-semibold">Adım Açıklaması</label>
+              <textarea class="form-control" asp-for="Description" rows="4" placeholder="Kullanıcıya bu adımda ne yapması gerektiğini açıklayan kısa metin..." required></textarea>
+              <span class="text-danger fs-2" asp-validation-for="Description"></span>
+            </div>
+
+            
+            <div class="col-12 d-flex justify-content-end gap-2">
+              <a asp-controller="TripPlan" asp-action="TripPlanList" class="btn btn-outline-secondary">İptal Et</a>
+              <button type="submit" class="btn btn-primary d-flex align-items-center gap-2">
+                <i class="ti ti-device-floppy fs-5"></i>
+                Adımı Kaydet
+              </button>
+            </div>
+            
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -161,15 +161,18 @@
       <_ContentIncludedByDefault Remove="wwwroot\jadoo\src\scss\_user-variables.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\jadoo\src\scss\_user.scss" />
       <_ContentIncludedByDefault Remove="wwwroot\jadoo\vendors.json" />
+      <_ContentIncludedByDefault Remove="Pages\AdminLayout\Layout.cshtml" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="AspNetCore.Identity.MongoDbCore" Version="7.0.0" />
       <PackageReference Include="AutoMapper" Version="14.0.0" />
       <PackageReference Include="MongoDB.Driver" Version="3.10.0" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Pages\" />
+      <Folder Include="Resources\" />
     </ItemGroup>
 
 </Project>
