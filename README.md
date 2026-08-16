@@ -30,16 +30,36 @@ Jadoo Travel, seyahat rotalarının, kategorilerinin, kullanıcı yorumlarının
 
 ---
 
-## 📸 Ekran Görüntüleri
+## 📸 Ekran Görüntüleri (Screenshots)
 
-### Yönetim Paneli (Dashboard)
-![Dashboard](JadooTravel/wwwroot/image/dashboard.png)
+### 1. Yönetim Paneli (Dashboard)
+![Yönetim Paneli](JadooTravel/wwwroot/image/dashboard.png)
 
-### AI Gezi Rehberi Sayfası
+### 2. AI Gezi Rehberi Sayfası
 ![AI Gezi Rehberi](JadooTravel/wwwroot/image/ai_recommend.png)
 
-### Giriş ve Kayıt Ekranları
+### 3. Rezervasyon Talepleri Listesi
+![Rezervasyon Talepleri](JadooTravel/wwwroot/image/bookings.png)
+
+### 4. Kategori Yönetimi
+![Kategori Yönetimi](JadooTravel/wwwroot/image/categories.png)
+
+### 5. Tur Rotaları Yönetimi
+![Tur Rotaları](JadooTravel/wwwroot/image/destinations.png)
+
+### 6. Seyahat Adımları
+![Seyahat Adımları](JadooTravel/wwwroot/image/trip_steps.png)
+
+### 7. Müşteri Yorumları Yönetimi
+![Müşteri Yorumları](JadooTravel/wwwroot/image/testimonials.png)
+
+### 8. Bülten Aboneleri Listesi
+![Bülten Aboneleri](JadooTravel/wwwroot/image/subscribers.png)
+
+### 9. Giriş Ekranı (Login)
 ![Giriş Ekranı](JadooTravel/wwwroot/image/login.png)
+
+### 10. Kayıt Ekranı (Register)
 ![Kayıt Ekranı](JadooTravel/wwwroot/image/register.png)
 
 ---
