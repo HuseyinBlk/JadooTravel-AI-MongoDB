@@ -15,8 +15,16 @@
         <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium text-dark" href="#destination">@Lang.T("Lokasyonlar")</a></li>
         <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium text-dark" href="#booking">@Lang.T("Rezervasyon")</a></li>
         <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium text-dark" href="#testimonial">@Lang.T("Bize Yazın")</a></li>
-        <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium text-dark" href="#!">@Lang.T("Giriş Yap")</a></li>
-        <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium px-4" href="#!">@Lang.T("Kayıt Ol")</a></li>
+        
+        @if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+          <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium text-dark" href="/Admin/Dashboard">@Lang.T("Yönetim Paneli")</a></li>
+          <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-danger order-1 order-lg-0 fw-medium px-4" href="/Login/Logout">@Lang.T("Çıkış Yap")</a></li>
+        }
+        else
+        {
+          <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium px-4" href="/Login">@Lang.T("Giriş Yap")</a></li>
+        }
         
         
         <li class="nav-item dropdown px-3 px-lg-0"> 

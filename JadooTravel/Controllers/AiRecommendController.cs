@@ -43,10 +43,8 @@ public class AiRecommendController : Controller
         try
         {
             var prompt = $"You are a professional travel guide. Provide a list of the 10 must-visit tourist attraction places in '{destination.Trim()}'. " +
-                         "For each place, write a short 1-2 sentence description explaining what it is and why it is a must-visit. " +
-                         "The entire output (both 'Name' and 'Description' fields) MUST be written in Turkish language. " +
-                         "Output ONLY a raw JSON array of objects with keys 'Name' and 'Description'. " +
-                         "Do not include markdown code block formatting, backticks, or any explanations.";
+                         "For each place, write a concise 1-sentence description in Turkish. " +
+                         "Output a valid JSON array of objects with keys 'Name' and 'Description'.";
 
             var requestBody = new
             {
@@ -60,7 +58,7 @@ public class AiRecommendController : Controller
             var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json");
 
             var response = await _httpClient.PostAsync(
-                $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key={keyToUse}",
+                $"https://generativelanguage.googleapis.com/v1/models/gemini-3.5-flash-lite:generateContent?key={keyToUse}",
                 content
             );
 
@@ -69,16 +67,31 @@ public class AiRecommendController : Controller
                 var responseString = await response.Content.ReadAsStringAsync();
                 using var doc = JsonDocument.Parse(responseString);
                 
-                var text = doc.RootElement
+                var parts = doc.RootElement
                     .GetProperty("candidates")[0]
                     .GetProperty("content")
-                    .GetProperty("parts")[0]
-                    .GetProperty("text")
-                    .GetString();
+                    .GetProperty("parts");
+
+                var sb = new StringBuilder();
+                foreach (var part in parts.EnumerateArray())
+                {
+                    if (part.TryGetProperty("text", out var textElem))
+                    {
+                        sb.Append(textElem.GetString());
+                    }
+                }
+
+                var text = sb.ToString();
 
                 if (!string.IsNullOrEmpty(text))
                 {
                     var cleanJson = text.Replace("```json", "").Replace("```", "").Trim();
+                    var firstBracket = cleanJson.IndexOf('[');
+                    var lastBracket = cleanJson.LastIndexOf(']');
+                    if (firstBracket >= 0 && lastBracket > firstBracket)
+                    {
+                        cleanJson = cleanJson.Substring(firstBracket, lastBracket - firstBracket + 1);
+                    }
                     
                     var places = JsonSerializer.Deserialize<List<PlaceRecommendation>>(cleanJson, new JsonSerializerOptions
                     {
